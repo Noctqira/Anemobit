@@ -5,7 +5,7 @@
 Anemobit은 SNMP(v2c 또는 v3)로 장치 인터페이스의 트래픽을 실시간으로 보여 줍니다. 표준 IF-MIB와 64비트 인터페이스 카운터를 지원하는 장치라면 사용할 수 있습니다. macOS, iOS / iPadOS, Windows, Linux 각 플랫폼마다 네이티브 앱이 있습니다.
 
 <p align="center">
-  <img src="Screenshots/macos.png" width="720" alt="Anemobit macOS 버전">
+  <img src="Screenshots/macOS.png" width="720" alt="Anemobit macOS 버전">
 </p>
 
 ## 기능

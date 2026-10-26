@@ -5,7 +5,7 @@
 Anemobit 透過 SNMP（v2c 或 v3）即時顯示設備介面的流量，任何支援標準 IF-MIB 與 64 位元介面計數器的設備都能使用。每個平台各有一套原生 app：macOS、iOS / iPadOS、Windows 與 Linux。
 
 <p align="center">
-  <img src="Screenshots/macos.png" width="720" alt="Anemobit macOS 版">
+  <img src="Screenshots/macOS.png" width="720" alt="Anemobit macOS 版">
 </p>
 
 ## 功能

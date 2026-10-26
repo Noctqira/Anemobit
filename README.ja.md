@@ -5,7 +5,7 @@
 Anemobit は、SNMP（v2c または v3）でデバイスのインターフェイスのトラフィックをリアルタイムに表示します。標準の IF-MIB と 64 ビットのインターフェイスカウンタに対応したデバイスであれば使用できます。macOS、iOS / iPadOS、Windows、Linux の各プラットフォームにネイティブアプリがあります。
 
 <p align="center">
-  <img src="Screenshots/macos.png" width="720" alt="Anemobit（macOS）">
+  <img src="Screenshots/macOS.png" width="720" alt="Anemobit（macOS）">
 </p>
 
 ## 機能
