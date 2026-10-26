@@ -1,0 +1,16 @@
+# =========================
+# Project-generated files
+# =========================
+
+/build/
+/target/
+/build-rpm/
+/obj-*/
+/debian/.debhelper/
+/debian/anemobit/
+/debian/files
+/debian/debhelper-build-stamp
+/debian/*.substvars
+/debian/*.log
+/debian/cargo-home/
+/.cargo/

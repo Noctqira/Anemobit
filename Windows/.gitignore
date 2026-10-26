@@ -1,0 +1,10 @@
+# =========================
+# Project-generated files
+# =========================
+
+# .NET build output and IDE temporary files
+bin/
+obj/
+.vs/
+*.user
+TestResults/
