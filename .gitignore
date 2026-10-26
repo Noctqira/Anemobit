@@ -1,0 +1,48 @@
+# ================================
+# OS-generated metadata artifacts
+# ================================
+
+# macOS
+.DS_Store
+.AppleDB
+.AppleDouble/
+.AppleDesktop/
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+.thumbnails/
+
+# =========================
+# Project-related files
+# =========================
+
+# Development notes and tools (not needed to build the apps)
+CLAUDE.md
+/docs/
+/Outputs/
