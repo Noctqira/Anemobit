@@ -1,0 +1,25 @@
+<Window x:Class="Anemobit.Views.FloatingRateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:Anemobit.Resources"
+        xmlns:controls="clr-namespace:Anemobit.Controls"
+        Title="Anemobit"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False" ShowActivated="False"
+        SizeToContent="WidthAndHeight">
+  <!-- Floating rate window on the desktop: download / upload rates for one interface. Semi-transparent background (adjustable opacity, at least 1/255 so it stays clickable and draggable);
+       outlined text stays legible on any wallpaper even when fully transparent. -->
+  <Border x:Name="Panel" CornerRadius="10" Padding="9,4" Cursor="SizeAll"
+          MouseLeftButtonDown="OnMouseLeftButtonDown" MouseRightButtonUp="OnMouseRightButtonUp"
+          ToolTip="{Binding TrayToolTip}">
+    <!-- Text with a solid outline (no blurred shadow, so edges stay crisp) stays legible on any wallpaper when the background is fully transparent. -->
+    <Grid TextElement.FontSize="13" TextElement.FontWeight="SemiBold" TextElement.FontFamily="{StaticResource NumberFont}">
+      <StackPanel Orientation="Horizontal" Visibility="{Binding IsConfigured, Converter={StaticResource VisibleWhen}}">
+        <controls:OutlinedText x:Name="DownText" Text="{Binding FloatingDownText}" Fill="{DynamicResource DownloadBrush}" Halo="{DynamicResource FloatingHaloBrush}" />
+        <controls:OutlinedText x:Name="UpText" Text="{Binding FloatingUpText}" Fill="{DynamicResource UploadBrush}" Halo="{DynamicResource FloatingHaloBrush}" Margin="8,0,0,0" />
+      </StackPanel>
+      <controls:OutlinedText Text="{x:Static res:Strings.TrayNotSet}" Fill="{DynamicResource FloatingTextBrush}" Halo="{DynamicResource FloatingHaloBrush}"
+                             Visibility="{Binding IsConfigured, Converter={StaticResource CollapsedWhen}}" />
+    </Grid>
+  </Border>
+</Window>

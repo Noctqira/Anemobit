@@ -1,0 +1,88 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"
+     xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util"
+     xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
+
+  <!--
+    Anemobit installer (English UI).
+    - Installs for all users, by default in Program Files\Anemobit; the user can change the folder during setup
+    - Anemobit.exe is framework-dependent: setup stops with a download link if the .NET 10 Desktop Runtime for this architecture is missing
+    - Start menu shortcut; Add or Remove Programs shows the icon and website
+    - Upgrades (MajorUpgrade) keep settings and passwords; a running Anemobit is closed before install / uninstall
+    - On uninstall (not upgrade), runs Anemobit.exe's uninstall cleanup mode as the user, deleting that user's
+      community and passwords in Credential Manager, Open at Login, and %APPDATA%\Anemobit
+    Never change the UpgradeCode: a new version would be treated as a different product and couldn't upgrade the old one.
+  -->
+  <Package Name="Anemobit"
+           Manufacturer="Noctqira"
+           Version="$(var.Version)"
+           UpgradeCode="ECEA0278-C273-415B-9650-1DFC48F709C4"
+           Scope="perMachine"
+           Compressed="yes">
+
+    <SummaryInformation Description="Anemobit — real-time interface traffic of devices over SNMP" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Anemobit is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <!-- The executable doesn't bundle .NET: require the .NET 10 Desktop Runtime for this MSI's architecture.
+         NetCoreCheck sets the property to 0 when a compatible runtime is installed (same roll-forward as the app: minor).
+         Skipped when uninstalling or repairing, so Anemobit can still be removed after the runtime is. -->
+    <netfx:DotNetCompatibilityCheck Property="DOTNETDESKTOPRUNTIME"
+                                    RuntimeType="desktop"
+                                    Platform="$(sys.BUILDARCH)"
+                                    Version="10.0.0"
+                                    RollForward="minor" />
+    <Launch Condition="Installed OR DOTNETDESKTOPRUNTIME = &quot;0&quot;"
+            Message="Anemobit requires the .NET 10 Desktop Runtime ($(sys.BUILDARCH)). Download it from https://dotnet.microsoft.com/download/dotnet/10.0, then run this installer again." />
+
+    <Icon Id="AnemobitIcon" SourceFile="$(var.AssetsDir)Anemobit.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AnemobitIcon" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/noctqira/Anemobit" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/noctqira/Anemobit/issues" />
+
+    <!-- 64-bit Program Files (for both x64 and arm64). -->
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="Anemobit" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder" />
+
+    <Component Id="AnemobitExecutable" Directory="INSTALLFOLDER">
+      <File Id="AnemobitExe" Source="$(var.AppPublishDir)Anemobit.exe" KeyPath="yes" />
+    </Component>
+
+    <!-- Start menu shortcut. Per Windows Installer rules (ICE43 / ICE57) a non-advertised shortcut needs its own component,
+         with a registry value as the KeyPath (the standard approach in the WiX docs). -->
+    <Component Id="StartMenuShortcut" Directory="ProgramMenuFolder">
+      <Shortcut Id="StartMenuShortcut"
+                Name="Anemobit"
+                Description="Real-time interface traffic of devices over SNMP"
+                Target="[INSTALLFOLDER]Anemobit.exe"
+                WorkingDirectory="INSTALLFOLDER"
+                Icon="AnemobitIcon" />
+      <RegistryValue Root="HKCU" Key="Software\Noctqira\Anemobit" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+
+    <!-- Anemobit stays in the notification area and the main window may not be open: send a close message first, then end the process if it doesn't close. -->
+    <util:CloseApplication Id="CloseAnemobit"
+                           Target="Anemobit.exe"
+                           CloseMessage="yes"
+                           RebootPrompt="no"
+                           TerminateProcess="0" />
+
+    <!-- On uninstall, remove the current user's data (not on upgrade). Runs as the user so it can reach that user's credentials and HKCU. -->
+    <CustomAction Id="CleanupUserData"
+                  FileRef="AnemobitExe"
+                  ExeCommand="--uninstall-cleanup"
+                  Execute="deferred"
+                  Impersonate="yes"
+                  Return="ignore" />
+    <InstallExecuteSequence>
+      <Custom Action="CleanupUserData" Before="RemoveFiles" Condition="REMOVE~=&quot;ALL&quot; AND NOT UPGRADINGPRODUCTCODE" />
+    </InstallExecuteSequence>
+
+    <!-- Setup UI: Welcome → License (Apache 2.0) → Install folder → Install. -->
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+  </Package>
+</Wix>

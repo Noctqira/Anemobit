@@ -1,0 +1,6 @@
+is_global = true
+
+# WFO0003: the WinForms analyzer suggests moving DPI settings from app.manifest to Application.SetHighDpiMode.
+# This is a WPF app (it only borrows WinForms' NotifyIcon); per-monitor DPI v2 is correctly declared in app.manifest.
+# This diagnostic has no source file, so it can't go in a file section of .editorconfig.
+dotnet_diagnostic.WFO0003.severity = none

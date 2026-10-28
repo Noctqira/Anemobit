@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Same colors as Theme.swift on macOS (light). Colors with an alpha prefix: #AARRGGBB. -->
+  <Color x:Key="TintTopColor">#29B89CFF</Color>
+  <Color x:Key="TintBottomColor">#59E7E1F6</Color>
+  <Color x:Key="GlowColor">#33B89CFF</Color>
+  <Color x:Key="AccentColor">#3E9A1E</Color>
+  <Color x:Key="DefaultDownloadColor">#0E8FB0</Color>
+  <Color x:Key="DefaultUploadColor">#B03CC4</Color>
+  <!-- Floating window background (actual transparency comes from the opacity setting) and text. -->
+  <Color x:Key="FloatingBaseColor">#FFFFFF</Color>
+  <!-- Outline for floating window text (keeps text legible on any wallpaper when the background is fully transparent). -->
+  <SolidColorBrush x:Key="FloatingHaloBrush" Color="#E6FFFFFF" />
+  <SolidColorBrush x:Key="FloatingTextBrush" Color="#1B1B1F" />
+
+  <SolidColorBrush x:Key="CardFillBrush" Color="#8CFFFFFF" />
+  <SolidColorBrush x:Key="CardStrokeBrush" Color="#0F000000" />
+  <SolidColorBrush x:Key="SegmentTrackBrush" Color="#24B89CFF" />
+  <SolidColorBrush x:Key="SegmentSelectedBrush" Color="#FFFFFFFF" />
+  <!-- Text on accent backgrounds (the dark mode accent is bright, so use dark text). -->
+  <SolidColorBrush x:Key="OnAccentBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="AccentBrush" Color="#3E9A1E" />
+  <SolidColorBrush x:Key="TrackBrush" Color="#14000000" />
+  <SolidColorBrush x:Key="SecondaryTextBrush" Color="#99000000" />
+  <SolidColorBrush x:Key="TertiaryTextBrush" Color="#59000000" />
+  <SolidColorBrush x:Key="GridLineBrush" Color="#12000000" />
+</ResourceDictionary>

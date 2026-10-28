@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="FiveMinuteAverage" xml:space="preserve">
+    <value>5-min Average</value>
+  </data>
+  <data name="FiveMinutePeak" xml:space="preserve">
+    <value>5-min Peak</value>
+  </data>
+  <data name="LastFiveMinutes" xml:space="preserve">
+    <value>Last 5 Minutes</value>
+  </data>
+  <data name="MaxFormat" xml:space="preserve">
+    <value>Max {0}</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+  <data name="WaitingForData" xml:space="preserve">
+    <value>Waiting for data…</value>
+  </data>
+  <data name="DeviceUpFormat" xml:space="preserve">
+    <value>Device up {0}</value>
+  </data>
+  <data name="DeviceUpSentenceFormat" xml:space="preserve">
+    <value>Device up {0}.</value>
+  </data>
+  <data name="UpdatedFormat" xml:space="preserve">
+    <value>Updated {0}</value>
+  </data>
+  <data name="InterfaceCountFormat" xml:space="preserve">
+    <value>{0} interfaces</value>
+  </data>
+  <data name="UptimeDayOne" xml:space="preserve">
+    <value>{0} day</value>
+  </data>
+  <data name="UptimeDayOther" xml:space="preserve">
+    <value>{0} days</value>
+  </data>
+  <data name="UptimeHourOne" xml:space="preserve">
+    <value>{0} hour</value>
+  </data>
+  <data name="UptimeHourOther" xml:space="preserve">
+    <value>{0} hours</value>
+  </data>
+  <data name="UptimeMinuteOne" xml:space="preserve">
+    <value>{0} minute</value>
+  </data>
+  <data name="UptimeMinuteOther" xml:space="preserve">
+    <value>{0} minutes</value>
+  </data>
+  <data name="UptimeSeparator" xml:space="preserve">
+    <value>, </value>
+  </data>
+  <data name="StatusConnecting" xml:space="preserve">
+    <value>Connecting…</value>
+  </data>
+  <data name="StatusErrorRetryFormat" xml:space="preserve">
+    <value>Error · retry in {0} s</value>
+  </data>
+  <data name="StatusNotSet" xml:space="preserve">
+    <value>Not Set</value>
+  </data>
+  <data name="TrayNotSet" xml:space="preserve">
+    <value>Anemobit: Not Set</value>
+  </data>
+  <data name="NotConfiguredTitle" xml:space="preserve">
+    <value>Device Not Configured</value>
+  </data>
+  <data name="NotConfiguredMessage" xml:space="preserve">
+    <value>Enter the device address and SNMP account, then choose the interface to monitor.</value>
+  </data>
+  <data name="OpenSettings" xml:space="preserve">
+    <value>Open Settings</value>
+  </data>
+  <data name="OpenMainWindow" xml:space="preserve">
+    <value>Open Main Window</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>Settings…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutAnemobit" xml:space="preserve">
+    <value>About Anemobit</value>
+  </data>
+  <data name="HideFloatingWindow" xml:space="preserve">
+    <value>Hide Floating Window</value>
+  </data>
+  <data name="ShowFloatingWindowMenu" xml:space="preserve">
+    <value>Show Floating Window</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="TrayFirstRunTitle" xml:space="preserve">
+    <value>Anemobit is running</value>
+  </data>
+  <data name="TrayFirstRunMessage" xml:space="preserve">
+    <value>Anemobit is in the system tray. To keep the icon visible, drag it from ^ onto the taskbar.</value>
+  </data>
+  <data name="SectionDevice" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="SectionSecurity" xml:space="preserve">
+    <value>SNMP Security</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="UserNameCommunity" xml:space="preserve">
+    <value>User Name (Community)</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="AuthenticationPassword" xml:space="preserve">
+    <value>Authentication Password</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="PrivacyPassword" xml:space="preserve">
+    <value>Privacy Password</value>
+  </data>
+  <data name="ModeNoneExplanation" xml:space="preserve">
+    <value>SNMPv2c with a community only.</value>
+  </data>
+  <data name="ModeAuthExplanation" xml:space="preserve">
+    <value>SNMPv3 with authentication.</value>
+  </data>
+  <data name="ModePrivExplanation" xml:space="preserve">
+    <value>SNMPv3 with authentication and encryption.</value>
+  </data>
+  <data name="SectionInterfaces" xml:space="preserve">
+    <value>Interfaces</value>
+  </data>
+  <data name="ScanHint" xml:space="preserve">
+    <value>Scan to list the device's interfaces.</value>
+  </data>
+  <data name="ScanInterfaces" xml:space="preserve">
+    <value>Scan Interfaces</value>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>Test Connection</value>
+  </data>
+  <data name="InterfacesFooter" xml:space="preserve">
+    <value>Select one or more interfaces to monitor. Each gets its own card on the dashboard.</value>
+  </data>
+  <data name="FloatingWindowInterface" xml:space="preserve">
+    <value>Floating Window Interface</value>
+  </data>
+  <data name="SectionDisplay" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="RefreshRate" xml:space="preserve">
+    <value>Refresh Rate</value>
+  </data>
+  <data name="SecondsFormat" xml:space="preserve">
+    <value>{0} sec</value>
+  </data>
+  <data name="RateUnit" xml:space="preserve">
+    <value>Rate Unit</value>
+  </data>
+  <data name="UnitBits" xml:space="preserve">
+    <value>Bits (Mbps)</value>
+  </data>
+  <data name="UnitBytes" xml:space="preserve">
+    <value>Bytes (MB/s)</value>
+  </data>
+  <data name="ShowChartsForMultiple" xml:space="preserve">
+    <value>Show Charts for Multiple Interfaces</value>
+  </data>
+  <data name="DisplayFooter" xml:space="preserve">
+    <value>When off, interface cards show only gauges and statistics while two or more interfaces are monitored.</value>
+  </data>
+  <data name="SectionFloatingWindow" xml:space="preserve">
+    <value>Floating Window</value>
+  </data>
+  <data name="ShowFloatingWindow" xml:space="preserve">
+    <value>Show Floating Window</value>
+  </data>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>Always on Top</value>
+  </data>
+  <data name="BackgroundOpacity" xml:space="preserve">
+    <value>Background Opacity</value>
+  </data>
+  <data name="FloatingFooter" xml:space="preserve">
+    <value>Shows the rates of one interface on the desktop. Drag it to move it; click it for details. The system tray icon stays available when it is hidden.</value>
+  </data>
+  <data name="SectionColors" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SectionLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="DisplayLanguage" xml:space="preserve">
+    <value>Display Language</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>Follow System</value>
+  </data>
+  <data name="LanguageFooter" xml:space="preserve">
+    <value>Takes effect after Anemobit restarts.</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>Restart Now</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="OpenAtLogin" xml:space="preserve">
+    <value>Open at Login</value>
+  </data>
+  <data name="StartupFooter" xml:space="preserve">
+    <value>Takes effect immediately. You can also change this in Task Manager → Startup apps.</value>
+  </data>
+  <data name="StartupErrorFormat" xml:space="preserve">
+    <value>Could not change the startup setting: {0}</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="ChangesTakeEffect" xml:space="preserve">
+    <value>Changes take effect when you save.</value>
+  </data>
+  <data name="CouldNotSaveCredentials" xml:space="preserve">
+    <value>Could not save the community or passwords to Windows Credential Manager</value>
+  </data>
+  <data name="CouldNotSaveSettingsFormat" xml:space="preserve">
+    <value>Could not save the settings: {0}</value>
+  </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>Scanning interfaces…</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>Testing connection…</value>
+  </data>
+  <data name="ConnectedSentence" xml:space="preserve">
+    <value>Connected.</value>
+  </data>
+  <data name="IfIndexFormat" xml:space="preserve">
+    <value>{0} is ifIndex {1}.</value>
+  </data>
+  <data name="InterfacesFoundFormat" xml:space="preserve">
+    <value>Interfaces found: {0}</value>
+  </data>
+  <data name="NoInterfacesFound" xml:space="preserve">
+    <value>No interfaces found</value>
+  </data>
+  <data name="EnterDeviceAddress" xml:space="preserve">
+    <value>Enter the device address</value>
+  </data>
+  <data name="EnterValidAddress" xml:space="preserve">
+    <value>Enter a valid IPv4 or IPv6 address, or a host name</value>
+  </data>
+  <data name="PortRange" xml:space="preserve">
+    <value>Port must be 1–65535</value>
+  </data>
+  <data name="EnterCommunity" xml:space="preserve">
+    <value>Enter a community</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>Enter a user name</value>
+  </data>
+  <data name="AuthPasswordTooShortFormat" xml:space="preserve">
+    <value>The authentication password must be at least {0} characters</value>
+  </data>
+  <data name="PrivPasswordTooShortFormat" xml:space="preserve">
+    <value>The privacy password must be at least {0} characters</value>
+  </data>
+  <data name="AboutSummary" xml:space="preserve">
+    <value>Real-time interface traffic of devices over SNMP.</value>
+  </data>
+  <data name="AboutCompatibility" xml:space="preserve">
+    <value>Works with devices that provide the standard IF-MIB with 64-bit interface counters over SNMPv2c or SNMPv3 (authentication: MD5, SHA1, SHA256, SHA384, SHA512; privacy: DES, AES-128).</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ReportIssue" xml:space="preserve">
+    <value>Report an Issue</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>License (Apache 2.0)</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ErrorConnectionFormat" xml:space="preserve">
+    <value>Connection error: {0}</value>
+  </data>
+  <data name="ErrorTimeout" xml:space="preserve">
+    <value>Connection timed out</value>
+  </data>
+  <data name="ErrorEngineIdMismatch" xml:space="preserve">
+    <value>Device engine ID mismatch</value>
+  </data>
+  <data name="ErrorCrypto" xml:space="preserve">
+    <value>Encryption failed</value>
+  </data>
+  <data name="ErrorInterfaceNotFoundFormat" xml:space="preserve">
+    <value>Interface {0} not found</value>
+  </data>
+  <data name="ErrorInvalidPrivacyParameters" xml:space="preserve">
+    <value>Invalid encryption parameters</value>
+  </data>
+  <data name="ErrorMalformedFormat" xml:space="preserve">
+    <value>Malformed packet ({0})</value>
+  </data>
+  <data name="ErrorStatusFormat" xml:space="preserve">
+    <value>SNMP error {0} (varbind {1})</value>
+  </data>
+  <data name="ErrorDiscoveryIncomplete" xml:space="preserve">
+    <value>SNMPv3 discovery has not completed</value>
+  </data>
+  <data name="ErrorSecurityLevel" xml:space="preserve">
+    <value>Security level does not match the device configuration</value>
+  </data>
+  <data name="ErrorNoResponseToEncrypted" xml:space="preserve">
+    <value>The device did not answer the encrypted request. Check the privacy password and protocol.</value>
+  </data>
+  <data name="ErrorTimeSync" xml:space="preserve">
+    <value>Time synchronization with the device failed</value>
+  </data>
+  <data name="ErrorUnexpectedPduFormat" xml:space="preserve">
+    <value>Unexpected PDU type 0x{0}</value>
+  </data>
+  <data name="ErrorUnexpectedResponseFormat" xml:space="preserve">
+    <value>Unexpected response: {0}</value>
+  </data>
+  <data name="ErrorUnknownUser" xml:space="preserve">
+    <value>Unknown user name</value>
+  </data>
+  <data name="ErrorUnsupportedVersionFormat" xml:space="preserve">
+    <value>Unsupported SNMP version {0}</value>
+  </data>
+  <data name="ErrorWrongAuth" xml:space="preserve">
+    <value>Wrong authentication password or protocol</value>
+  </data>
+  <data name="ErrorWrongPriv" xml:space="preserve">
+    <value>Wrong privacy password or protocol</value>
+  </data>
+</root>

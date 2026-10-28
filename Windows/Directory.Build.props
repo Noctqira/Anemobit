@@ -1,0 +1,30 @@
+<Project>
+
+  <!-- Build settings shared by all projects; individual projects only specify what differs. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- Code quality: warnings as errors, recommended analyzer rules, and .editorconfig style checks. -->
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- XML docs must be generated for unused usings (IDE0005) to be checked during build; comments aren't required on every public member. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Anemobit</Product>
+    <Company>Noctqira</Company>
+    <Authors>Noctqira</Authors>
+    <Copyright>© 2026 Noctqira</Copyright>
+    <!-- Version shared by the app and the installer (MSI version format: major < 256, minor < 256, build < 65536). -->
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project>
+
+  <!-- Central Package Management: all NuGet package versions are centralized here; csproj files only list package names.
+       Any new package requires the user's approval first (see ../CLAUDE.md). -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="xunit.v3" Version="4.0.2" />
+    <!-- Installer (WiX v7; the user accepted the EULA and OSMF terms). The WixToolset.Sdk version itself is in msbuild-sdks in global.json. -->
+    <PackageVersion Include="WixToolset.UI.wixext" Version="7.0.0" />
+    <PackageVersion Include="WixToolset.Util.wixext" Version="7.0.0" />
+    <!-- .NET Desktop Runtime check in the MSI (approved by the user, 2026-10-23). -->
+    <PackageVersion Include="WixToolset.Netfx.wixext" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

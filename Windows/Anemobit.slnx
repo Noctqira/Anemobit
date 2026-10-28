@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Anemobit.Core/Anemobit.Core.csproj" />
+    <Project Path="src/Anemobit/Anemobit.csproj" />
+  </Folder>
+  <Folder Name="/installer/">
+    <!-- The installer first publishes two ~70 MB executables, so it isn't built with the solution; see Windows/CLAUDE.md for usage. -->
+    <Project Path="installer/Anemobit.Installer/Anemobit.Installer.wixproj">
+      <Build Project="false" />
+    </Project>
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Anemobit.Core.Tests/Anemobit.Core.Tests.csproj" />
+    <Project Path="tests/Anemobit.Tests/Anemobit.Tests.csproj" />
+  </Folder>
+</Solution>

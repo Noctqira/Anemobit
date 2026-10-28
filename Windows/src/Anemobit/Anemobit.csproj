@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <!-- The notification area icon uses .NET's built-in System.Windows.Forms.NotifyIcon. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- Required by the LibraryImport for Credential Manager (CredRead / CredWrite). -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationIcon>Assets\Anemobit.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- With both WPF and WinForms enabled, keep only WPF's implicit usings; WinForms types are always fully qualified. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\AppIcon.png" />
+    <Resource Include="Assets\Anemobit.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- UI text: English is the development language; zh-Hant / ja / ko are translations (terminology per ../../../docs/glossary.md). -->
+    <EmbeddedResource Update="Resources\Strings.resx"
+                      GenerateSource="true"
+                      StronglyTypedClassName="Strings"
+                      StronglyTypedNamespace="Anemobit.Resources"
+                      StronglyTypedFileName="$(BaseIntermediateOutputPath)Strings.Designer.cs"
+                      StronglyTypedLanguage="C#"
+                      PublicClass="true" />
+  </ItemGroup>
+
+  <!--
+    WPF first compiles a temporary assembly (*_wpftmp) to process XAML, before the resx strongly typed class exists.
+    So Strings.Designer.cs is generated before MarkupCompilePass1 and added to compilation only in the temporary project
+    (in the real compile CoreResGen adds it itself; adding it twice causes a CS2002 warning).
+  -->
+  <Target Name="GenerateResxSourceBeforeMarkup" BeforeTargets="MarkupCompilePass1" DependsOnTargets="SplitResourcesByCulture;CreateManifestResourceNames;CoreResGen" />
+  <ItemGroup Condition="'$(_TargetAssemblyProjectName)' != ''">
+    <Compile Include="$(BaseIntermediateOutputPath)Strings.Designer.cs" Condition="Exists('$(BaseIntermediateOutputPath)Strings.Designer.cs')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Anemobit.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anemobit.Core\Anemobit.Core.csproj" />
+  </ItemGroup>
+
+</Project>

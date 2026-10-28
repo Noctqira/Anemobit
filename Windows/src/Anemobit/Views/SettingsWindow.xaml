@@ -1,0 +1,290 @@
+<Window x:Class="Anemobit.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Anemobit.ViewModels"
+        xmlns:res="clr-namespace:Anemobit.Resources"
+        xmlns:converters="clr-namespace:Anemobit.Converters"
+        Title="{x:Static res:Strings.Settings}"
+        Icon="/Anemobit;component/Assets/Anemobit.ico"
+        Width="600" Height="820" MinWidth="440" MinHeight="400"
+        WindowStartupLocation="CenterScreen">
+  <!-- Settings window: same sections as macOS (Device, SNMP Security, Interfaces, Display, Language, Colors, Startup), plus Floating Window.
+       Each section is a card, and option rows use the custom style (same as SettingsView on macOS). -->
+  <Window.Resources>
+    <Style x:Key="RowLabel" TargetType="TextBlock">
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Margin" Value="0,0,12,0" />
+    </Style>
+    <Style x:Key="Row" TargetType="DockPanel">
+      <Setter Property="Margin" Value="14,9" />
+      <Setter Property="LastChildFill" Value="True" />
+    </Style>
+    <Style x:Key="Stack" TargetType="StackPanel">
+      <Setter Property="Margin" Value="14,10" />
+    </Style>
+    <Style x:Key="FieldBox" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+      <Setter Property="MinWidth" Value="220" />
+      <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+    <Style x:Key="FieldPassword" TargetType="PasswordBox" BasedOn="{StaticResource {x:Type PasswordBox}}">
+      <Setter Property="MinWidth" Value="220" />
+      <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+  </Window.Resources>
+
+  <Grid>
+    <ContentControl ContentTemplate="{StaticResource ThemedBackgroundTemplate}" Focusable="False" />
+    <DockPanel>
+      <!-- Save row -->
+      <Border DockPanel.Dock="Bottom" Padding="20,12" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource CardStrokeBrush}">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Style="{StaticResource AccentButton}" Command="{Binding SaveCommand}"
+                  Content="{x:Static res:Strings.Save}" IsDefault="True" />
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,12,0">
+            <TextBlock x:Name="ActivityIcon" Style="{StaticResource Icon}" FontSize="13" Margin="0,0,6,0" />
+            <ProgressBar IsIndeterminate="True" Width="40" Height="4" Margin="0,0,8,0"
+                         Visibility="{Binding IsWorking, Converter={StaticResource VisibleWhen}}" />
+            <TextBlock x:Name="ActivityText" Text="{Binding ActivityText}" TextWrapping="Wrap" VerticalAlignment="Center" MaxWidth="420" />
+          </StackPanel>
+        </DockPanel>
+      </Border>
+
+      <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel MaxWidth="560" Margin="16,20">
+
+          <!-- Device -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionDevice}" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <DockPanel Style="{StaticResource Row}">
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.Address}" />
+                <TextBox Style="{StaticResource FieldBox}" Text="{Binding Host, UpdateSourceTrigger=PropertyChanged}"
+                         AutomationProperties.Name="{x:Static res:Strings.Address}" InputMethod.IsInputMethodEnabled="False" />
+              </DockPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <DockPanel Style="{StaticResource Row}">
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.Port}" />
+                <TextBox Style="{StaticResource FieldBox}" MinWidth="90" Text="{Binding PortText, UpdateSourceTrigger=PropertyChanged}"
+                         AutomationProperties.Name="{x:Static res:Strings.Port}" InputMethod.IsInputMethodEnabled="False" />
+              </DockPanel>
+            </StackPanel>
+          </Border>
+
+          <!-- SNMP security -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionSecurity}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <StackPanel Style="{StaticResource Stack}">
+                <TextBlock Text="{x:Static res:Strings.Security}" Margin="0,0,0,8" />
+                <ListBox Style="{StaticResource SegmentedPicker}" ItemsSource="{x:Static vm:SettingsViewModel.SecurityModes}"
+                         SelectedItem="{Binding Mode}" AutomationProperties.Name="{x:Static res:Strings.Security}" />
+              </StackPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+
+              <DockPanel Style="{StaticResource Row}" Visibility="{Binding IsCommunityMode, Converter={StaticResource VisibleWhen}}">
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.Community}" />
+                <PasswordBox x:Name="CommunityBox" Style="{StaticResource FieldPassword}" PasswordChanged="OnCommunityChanged"
+                             AutomationProperties.Name="{x:Static res:Strings.Community}" />
+              </DockPanel>
+
+              <StackPanel Visibility="{Binding IsUsmMode, Converter={StaticResource VisibleWhen}}">
+                <DockPanel Style="{StaticResource Row}">
+                  <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.UserNameCommunity}" />
+                  <TextBox Style="{StaticResource FieldBox}" Text="{Binding Community, UpdateSourceTrigger=PropertyChanged}"
+                           AutomationProperties.Name="{x:Static res:Strings.UserNameCommunity}" InputMethod.IsInputMethodEnabled="False" />
+                </DockPanel>
+                <Rectangle Style="{StaticResource RowDivider}" />
+                <!-- Five protocols don't fit in an option row, so use a drop-down (the Windows version has no SHA224). -->
+                <DockPanel Style="{StaticResource Row}">
+                  <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.Authentication}" />
+                  <ComboBox HorizontalAlignment="Right" MinWidth="140" ItemsSource="{x:Static vm:SettingsViewModel.AuthProtocols}"
+                            SelectedItem="{Binding AuthProtocol}" AutomationProperties.Name="{x:Static res:Strings.Authentication}">
+                    <ComboBox.ItemTemplate>
+                      <DataTemplate>
+                        <TextBlock Text="{Binding Converter={x:Static converters:DisplayNameConverter.Instance}}" />
+                      </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                  </ComboBox>
+                </DockPanel>
+                <Rectangle Style="{StaticResource RowDivider}" />
+                <DockPanel Style="{StaticResource Row}">
+                  <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.AuthenticationPassword}" />
+                  <PasswordBox x:Name="AuthPasswordBox" Style="{StaticResource FieldPassword}" PasswordChanged="OnAuthPasswordChanged"
+                               AutomationProperties.Name="{x:Static res:Strings.AuthenticationPassword}" />
+                </DockPanel>
+              </StackPanel>
+
+              <StackPanel Visibility="{Binding IsPrivateMode, Converter={StaticResource VisibleWhen}}">
+                <Rectangle Style="{StaticResource RowDivider}" />
+                <StackPanel Style="{StaticResource Stack}">
+                  <TextBlock Text="{x:Static res:Strings.Privacy}" Margin="0,0,0,8" />
+                  <ListBox Style="{StaticResource SegmentedPicker}" ItemsSource="{x:Static vm:SettingsViewModel.PrivProtocols}"
+                           SelectedItem="{Binding PrivProtocol}" AutomationProperties.Name="{x:Static res:Strings.Privacy}" />
+                </StackPanel>
+                <Rectangle Style="{StaticResource RowDivider}" />
+                <DockPanel Style="{StaticResource Row}">
+                  <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.PrivacyPassword}" />
+                  <PasswordBox x:Name="PrivPasswordBox" Style="{StaticResource FieldPassword}" PasswordChanged="OnPrivPasswordChanged"
+                               AutomationProperties.Name="{x:Static res:Strings.PrivacyPassword}" />
+                </DockPanel>
+              </StackPanel>
+            </StackPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{Binding ModeExplanation}" />
+          <StackPanel Orientation="Horizontal" Margin="4,4,4,0" Visibility="{Binding ConnectionProblem, Converter={StaticResource VisibleWhen}}">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE7BA;" FontSize="12" Foreground="DarkOrange" Margin="0,0,6,0" />
+            <TextBlock Text="{Binding ConnectionProblem}" FontSize="12" Foreground="DarkOrange" TextWrapping="Wrap" />
+          </StackPanel>
+
+          <!-- Interfaces -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionInterfaces}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <TextBlock Margin="14,11" Foreground="{DynamicResource SecondaryTextBrush}" Text="{x:Static res:Strings.ScanHint}"
+                         Visibility="{Binding HasInterfaceChoices, Converter={StaticResource CollapsedWhen}}" />
+              <ItemsControl ItemsSource="{Binding InterfaceChoices}" Focusable="False">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate DataType="{x:Type vm:InterfaceChoice}">
+                    <StackPanel>
+                      <CheckBox Margin="14,6" IsChecked="{Binding IsSelected}" Content="{Binding Name}" />
+                      <Rectangle Style="{StaticResource RowDivider}" />
+                    </StackPanel>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              <Rectangle Style="{StaticResource RowDivider}" Visibility="{Binding HasInterfaceChoices, Converter={StaticResource CollapsedWhen}}" />
+
+              <StackPanel Visibility="{Binding HasMultipleSelected, Converter={StaticResource VisibleWhen}}">
+                <DockPanel Style="{StaticResource Row}">
+                  <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.FloatingWindowInterface}" TextWrapping="Wrap" />
+                  <ComboBox HorizontalAlignment="Right" MinWidth="160" ItemsSource="{Binding SelectedInterfaces}"
+                            SelectedItem="{Binding FloatingInterface}" AutomationProperties.Name="{x:Static res:Strings.FloatingWindowInterface}" />
+                </DockPanel>
+                <Rectangle Style="{StaticResource RowDivider}" />
+              </StackPanel>
+
+              <StackPanel Orientation="Horizontal" Margin="14,10">
+                <Button Style="{StaticResource LinkButton}" Command="{Binding ScanCommand}" Content="{x:Static res:Strings.ScanInterfaces}" Margin="0,0,20,0" />
+                <Button Style="{StaticResource LinkButton}" Command="{Binding TestCommand}" Content="{x:Static res:Strings.TestConnection}" />
+              </StackPanel>
+            </StackPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{x:Static res:Strings.InterfacesFooter}" />
+
+          <!-- Display -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionDisplay}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <StackPanel Style="{StaticResource Stack}">
+                <TextBlock Text="{x:Static res:Strings.RefreshRate}" Margin="0,0,0,8" />
+                <ListBox Style="{StaticResource SegmentedPicker}" ItemsSource="{x:Static vm:SettingsViewModel.RefreshIntervals}"
+                         SelectedItem="{Binding RefreshSeconds}" AutomationProperties.Name="{x:Static res:Strings.RefreshRate}" />
+              </StackPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <StackPanel Style="{StaticResource Stack}">
+                <TextBlock Text="{x:Static res:Strings.RateUnit}" Margin="0,0,0,8" />
+                <ListBox Style="{StaticResource SegmentedPicker}" ItemsSource="{x:Static vm:SettingsViewModel.UnitStyles}"
+                         SelectedItem="{Binding UnitStyle}" AutomationProperties.Name="{x:Static res:Strings.RateUnit}" />
+              </StackPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <DockPanel Style="{StaticResource Row}">
+                <CheckBox DockPanel.Dock="Right" IsChecked="{Binding ChartsWhenMultiple}" Style="{StaticResource ToggleSwitch}"
+                          AutomationProperties.Name="{x:Static res:Strings.ShowChartsForMultiple}" />
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.ShowChartsForMultiple}" TextWrapping="Wrap" />
+              </DockPanel>
+            </StackPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{x:Static res:Strings.DisplayFooter}" />
+
+          <!-- Floating window -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionFloatingWindow}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <DockPanel Style="{StaticResource Row}">
+                <CheckBox DockPanel.Dock="Right" IsChecked="{Binding ShowFloatingWindow}" Style="{StaticResource ToggleSwitch}"
+                          AutomationProperties.Name="{x:Static res:Strings.ShowFloatingWindow}" />
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.ShowFloatingWindow}" />
+              </DockPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <DockPanel Style="{StaticResource Row}">
+                <CheckBox DockPanel.Dock="Right" IsChecked="{Binding FloatingAlwaysOnTop}" Style="{StaticResource ToggleSwitch}"
+                          AutomationProperties.Name="{x:Static res:Strings.AlwaysOnTop}" />
+                <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.AlwaysOnTop}" />
+              </DockPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <DockPanel Style="{StaticResource Row}">
+                <TextBlock DockPanel.Dock="Left" Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.BackgroundOpacity}" />
+                <TextBlock DockPanel.Dock="Right" Width="44" TextAlignment="Right" VerticalAlignment="Center"
+                           Text="{Binding FloatingOpacityPercent, StringFormat={}{0:0}%}" />
+                <Slider Minimum="0" Maximum="100" SmallChange="1" LargeChange="10" VerticalAlignment="Center"
+                        Value="{Binding FloatingOpacityPercent}" AutomationProperties.Name="{x:Static res:Strings.BackgroundOpacity}" />
+              </DockPanel>
+            </StackPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{x:Static res:Strings.FloatingFooter}" />
+
+          <!-- Language (applies immediately, without Save; takes effect after a restart) -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionLanguage}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <DockPanel Style="{StaticResource Row}">
+              <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.DisplayLanguage}" />
+              <ComboBox HorizontalAlignment="Right" MinWidth="160" ItemsSource="{x:Static vm:SettingsViewModel.Languages}"
+                        SelectedItem="{Binding Language}" AutomationProperties.Name="{x:Static res:Strings.DisplayLanguage}">
+                <ComboBox.ItemTemplate>
+                  <DataTemplate>
+                    <TextBlock Text="{Binding Converter={x:Static converters:DisplayNameConverter.Instance}}" />
+                  </DataTemplate>
+                </ComboBox.ItemTemplate>
+              </ComboBox>
+            </DockPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{x:Static res:Strings.LanguageFooter}" />
+          <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Left" Margin="4,6,0,0"
+                  Command="{Binding RestartCommand}" Content="{x:Static res:Strings.RestartNow}"
+                  Visibility="{Binding NeedsRestart, Converter={StaticResource VisibleWhen}}" />
+          <TextBlock Style="{StaticResource Footnote}" Foreground="DarkOrange" Text="{Binding LanguageError}"
+                     Visibility="{Binding LanguageError, Converter={StaticResource VisibleWhen}}" />
+
+          <!-- Colors -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionColors}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <StackPanel>
+              <StackPanel Style="{StaticResource Stack}">
+                <DockPanel Margin="0,0,0,8">
+                  <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Command="{Binding ResetDownloadColorCommand}"
+                          Content="{x:Static res:Strings.Reset}"
+                          Visibility="{Binding HasCustomDownloadColor, Converter={StaticResource VisibleWhen}}" />
+                  <TextBlock Text="{x:Static res:Strings.Download}" />
+                </DockPanel>
+                <ItemsControl x:Name="DownloadSwatches" Focusable="False" Tag="Download" />
+              </StackPanel>
+              <Rectangle Style="{StaticResource RowDivider}" />
+              <StackPanel Style="{StaticResource Stack}">
+                <DockPanel Margin="0,0,0,8">
+                  <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Command="{Binding ResetUploadColorCommand}"
+                          Content="{x:Static res:Strings.Reset}"
+                          Visibility="{Binding HasCustomUploadColor, Converter={StaticResource VisibleWhen}}" />
+                  <TextBlock Text="{x:Static res:Strings.Upload}" />
+                </DockPanel>
+                <ItemsControl x:Name="UploadSwatches" Focusable="False" Tag="Upload" />
+              </StackPanel>
+            </StackPanel>
+          </Border>
+
+          <!-- Startup (applies immediately, without Save) -->
+          <TextBlock Style="{StaticResource SectionTitle}" Text="{x:Static res:Strings.SectionStartup}" Margin="4,22,4,8" />
+          <Border Style="{StaticResource SectionCard}">
+            <DockPanel Style="{StaticResource Row}">
+              <CheckBox DockPanel.Dock="Right" IsChecked="{Binding OpenAtLogin}" Style="{StaticResource ToggleSwitch}"
+                        AutomationProperties.Name="{x:Static res:Strings.OpenAtLogin}" />
+              <TextBlock Style="{StaticResource RowLabel}" Text="{x:Static res:Strings.OpenAtLogin}" />
+            </DockPanel>
+          </Border>
+          <TextBlock Style="{StaticResource Footnote}" Text="{x:Static res:Strings.StartupFooter}" />
+          <TextBlock Style="{StaticResource Footnote}" Foreground="DarkOrange" Text="{Binding StartupError}"
+                     Visibility="{Binding StartupError, Converter={StaticResource VisibleWhen}}" />
+        </StackPanel>
+      </ScrollViewer>
+    </DockPanel>
+  </Grid>
+</Window>

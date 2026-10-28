@@ -1,0 +1,43 @@
+<Project Sdk="WixToolset.Sdk">
+
+  <!--
+    MSI installer for Anemobit (WiX v7). The build first uses the publish profile to produce a single self-contained executable, then packages it as an MSI.
+    Usage (under Windows/):
+      dotnet build installer/Anemobit.Installer -c Release -p:Platform=x64
+      dotnet build installer/Anemobit.Installer -c Release -p:Platform=arm64
+    Output: ../Outputs/Anemobit-<version>-<arch>.msi
+  -->
+  <PropertyGroup>
+    <!-- The user has accepted the WiX v7 EULA and the Open Source Maintenance Fee terms. -->
+    <AcceptEula>wix7</AcceptEula>
+    <OutputName>Anemobit-$(Version)-$(Platform)</OutputName>
+    <AppPublishDir>$(MSBuildThisFileDirectory)..\..\src\Anemobit\bin\publish\win-$(Platform)\</AppPublishDir>
+    <DefineConstants>Version=$(Version);AppPublishDir=$(AppPublishDir);AssetsDir=$(MSBuildThisFileDirectory)..\..\src\Anemobit\Assets\</DefineConstants>
+    <OutputsDir>$(MSBuildThisFileDirectory)..\..\..\Outputs\</OutputsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" />
+    <PackageReference Include="WixToolset.Util.wixext" />
+    <PackageReference Include="WixToolset.Netfx.wixext" />
+  </ItemGroup>
+
+  <!-- The installer only supports 64-bit x64 and arm64 (matching the app's publish profiles). -->
+  <Target Name="CheckPlatform" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(Platform)' != 'x64' And '$(Platform)' != 'arm64'" Text="Specify -p:Platform=x64 or -p:Platform=arm64 (currently '$(Platform)')." />
+  </Target>
+
+  <!-- Publish the app first (win-x64 / win-arm64 publish profiles: a single self-contained executable). -->
+  <Target Name="PublishApp" BeforeTargets="BeforeBuild" DependsOnTargets="CheckPlatform">
+    <MSBuild Projects="$(MSBuildThisFileDirectory)..\..\src\Anemobit\Anemobit.csproj"
+             Targets="Restore;Publish"
+             Properties="PublishProfile=win-$(Platform);Platform=AnyCPU" />
+  </Target>
+
+  <!-- MSIs for distribution go to Outputs/ at the repo root (not in version control). -->
+  <Target Name="CopyToOutputs" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(OutputsDir)" />
+    <Message Importance="high" Text="Anemobit installer -> $(OutputsDir)$(TargetFileName)" />
+  </Target>
+
+</Project>

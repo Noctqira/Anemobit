@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Unit tests for the WPF app (settings, view models, localized text). No network: SNMP uses the Core tests' fakes. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Anemobit.Core.Tests\Fakes\FakeAgent.cs" Link="CoreFakes\FakeAgent.cs" />
+    <Compile Include="..\Anemobit.Core.Tests\Fakes\FakeTransport.cs" Link="CoreFakes\FakeTransport.cs" />
+    <Compile Include="..\Anemobit.Core.Tests\Fakes\FakeTimeProvider.cs" Link="CoreFakes\FakeTimeProvider.cs" />
+    <Compile Include="..\Anemobit.Core.Tests\Fakes\SnmpMessageTestExtensions.cs" Link="CoreFakes\SnmpMessageTestExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Anemobit\Anemobit.csproj" />
+    <ProjectReference Include="..\..\src\Anemobit.Core\Anemobit.Core.csproj" />
+  </ItemGroup>
+
+</Project>

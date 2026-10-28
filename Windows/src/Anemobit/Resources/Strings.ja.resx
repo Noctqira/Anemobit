@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Download" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>現在</value>
+  </data>
+  <data name="FiveMinuteAverage" xml:space="preserve">
+    <value>5分間平均</value>
+  </data>
+  <data name="FiveMinutePeak" xml:space="preserve">
+    <value>5分間ピーク</value>
+  </data>
+  <data name="LastFiveMinutes" xml:space="preserve">
+    <value>過去5分間</value>
+  </data>
+  <data name="MaxFormat" xml:space="preserve">
+    <value>上限 {0}</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>データなし</value>
+  </data>
+  <data name="WaitingForData" xml:space="preserve">
+    <value>データを待っています…</value>
+  </data>
+  <data name="DeviceUpFormat" xml:space="preserve">
+    <value>デバイス稼働時間 {0}</value>
+  </data>
+  <data name="DeviceUpSentenceFormat" xml:space="preserve">
+    <value>デバイス稼働時間 {0}。</value>
+  </data>
+  <data name="UpdatedFormat" xml:space="preserve">
+    <value>{0} に更新</value>
+  </data>
+  <data name="InterfaceCountFormat" xml:space="preserve">
+    <value>{0} 個のインターフェイス</value>
+  </data>
+  <data name="UptimeDayOne" xml:space="preserve">
+    <value>{0}日</value>
+  </data>
+  <data name="UptimeDayOther" xml:space="preserve">
+    <value>{0}日</value>
+  </data>
+  <data name="UptimeHourOne" xml:space="preserve">
+    <value>{0}時間</value>
+  </data>
+  <data name="UptimeHourOther" xml:space="preserve">
+    <value>{0}時間</value>
+  </data>
+  <data name="UptimeMinuteOne" xml:space="preserve">
+    <value>{0}分</value>
+  </data>
+  <data name="UptimeMinuteOther" xml:space="preserve">
+    <value>{0}分</value>
+  </data>
+  <data name="UptimeSeparator" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="StatusConnecting" xml:space="preserve">
+    <value>接続中…</value>
+  </data>
+  <data name="StatusErrorRetryFormat" xml:space="preserve">
+    <value>エラー · {0}秒後に再試行</value>
+  </data>
+  <data name="StatusNotSet" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="TrayNotSet" xml:space="preserve">
+    <value>Anemobit：未設定</value>
+  </data>
+  <data name="NotConfiguredTitle" xml:space="preserve">
+    <value>デバイスが未設定です</value>
+  </data>
+  <data name="NotConfiguredMessage" xml:space="preserve">
+    <value>デバイスのアドレスと SNMP アカウントを入力し、監視するインターフェイスを選択してください。</value>
+  </data>
+  <data name="OpenSettings" xml:space="preserve">
+    <value>設定を開く</value>
+  </data>
+  <data name="OpenMainWindow" xml:space="preserve">
+    <value>メインウインドウを開く</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>設定…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="AboutAnemobit" xml:space="preserve">
+    <value>Anemobit について</value>
+  </data>
+  <data name="HideFloatingWindow" xml:space="preserve">
+    <value>フローティングウインドウを隠す</value>
+  </data>
+  <data name="ShowFloatingWindowMenu" xml:space="preserve">
+    <value>フローティングウインドウを表示</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="TrayFirstRunTitle" xml:space="preserve">
+    <value>Anemobit は実行中です</value>
+  </data>
+  <data name="TrayFirstRunMessage" xml:space="preserve">
+    <value>Anemobit はシステムトレイにあります。アイコンを常に表示するには、^ からタスクバーにドラッグしてください。</value>
+  </data>
+  <data name="SectionDevice" xml:space="preserve">
+    <value>デバイス</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>アドレス</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="SectionSecurity" xml:space="preserve">
+    <value>SNMP セキュリティ</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>セキュリティモード</value>
+  </data>
+  <data name="Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="UserNameCommunity" xml:space="preserve">
+    <value>ユーザ名（Community）</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>認証プロトコル</value>
+  </data>
+  <data name="AuthenticationPassword" xml:space="preserve">
+    <value>認証パスワード</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>暗号化プロトコル</value>
+  </data>
+  <data name="PrivacyPassword" xml:space="preserve">
+    <value>暗号化パスワード</value>
+  </data>
+  <data name="ModeNoneExplanation" xml:space="preserve">
+    <value>SNMPv2c（community のみ）。</value>
+  </data>
+  <data name="ModeAuthExplanation" xml:space="preserve">
+    <value>SNMPv3（認証のみ）。</value>
+  </data>
+  <data name="ModePrivExplanation" xml:space="preserve">
+    <value>SNMPv3（認証と暗号化）。</value>
+  </data>
+  <data name="SectionInterfaces" xml:space="preserve">
+    <value>インターフェイス</value>
+  </data>
+  <data name="ScanHint" xml:space="preserve">
+    <value>「インターフェイスをスキャン」でデバイスのインターフェイスを一覧表示します。</value>
+  </data>
+  <data name="ScanInterfaces" xml:space="preserve">
+    <value>インターフェイスをスキャン</value>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>接続をテスト</value>
+  </data>
+  <data name="InterfacesFooter" xml:space="preserve">
+    <value>監視するインターフェイスを1つ以上選択してください。インターフェイスごとにダッシュボードにカードが表示されます。</value>
+  </data>
+  <data name="FloatingWindowInterface" xml:space="preserve">
+    <value>フローティングウインドウに表示するインターフェイス</value>
+  </data>
+  <data name="SectionDisplay" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="RefreshRate" xml:space="preserve">
+    <value>更新間隔</value>
+  </data>
+  <data name="SecondsFormat" xml:space="preserve">
+    <value>{0}秒</value>
+  </data>
+  <data name="RateUnit" xml:space="preserve">
+    <value>速度の単位</value>
+  </data>
+  <data name="UnitBits" xml:space="preserve">
+    <value>ビット（Mbps）</value>
+  </data>
+  <data name="UnitBytes" xml:space="preserve">
+    <value>バイト（MB/s）</value>
+  </data>
+  <data name="ShowChartsForMultiple" xml:space="preserve">
+    <value>複数のインターフェイスでもグラフを表示</value>
+  </data>
+  <data name="DisplayFooter" xml:space="preserve">
+    <value>オフのときは、2つ以上のインターフェイスを監視している間、カードにはメーターと統計だけが表示されます。</value>
+  </data>
+  <data name="SectionFloatingWindow" xml:space="preserve">
+    <value>フローティングウインドウ</value>
+  </data>
+  <data name="ShowFloatingWindow" xml:space="preserve">
+    <value>フローティングウインドウを表示</value>
+  </data>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>常に手前に表示</value>
+  </data>
+  <data name="BackgroundOpacity" xml:space="preserve">
+    <value>背景の不透明度</value>
+  </data>
+  <data name="FloatingFooter" xml:space="preserve">
+    <value>デスクトップに1つのインターフェイスの速度を表示します。ドラッグで移動し、クリックすると詳細を表示します。非表示のときもシステムトレイのアイコンから開けます。</value>
+  </data>
+  <data name="SectionColors" xml:space="preserve">
+    <value>カラー</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>デフォルトに戻す</value>
+  </data>
+  <data name="SectionLanguage" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="DisplayLanguage" xml:space="preserve">
+    <value>表示言語</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>システムに従う</value>
+  </data>
+  <data name="LanguageFooter" xml:space="preserve">
+    <value>Anemobit の再起動後に反映されます。</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>今すぐ再起動</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>起動</value>
+  </data>
+  <data name="OpenAtLogin" xml:space="preserve">
+    <value>ログイン時に開く</value>
+  </data>
+  <data name="StartupFooter" xml:space="preserve">
+    <value>すぐに反映されます。「タスク マネージャー → スタートアップ アプリ」でも変更できます。</value>
+  </data>
+  <data name="StartupErrorFormat" xml:space="preserve">
+    <value>起動の設定を変更できませんでした：{0}</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>保存しました</value>
+  </data>
+  <data name="ChangesTakeEffect" xml:space="preserve">
+    <value>設定は保存後に反映されます。</value>
+  </data>
+  <data name="CouldNotSaveCredentials" xml:space="preserve">
+    <value>community またはパスワードを Windows 資格情報マネージャーに保存できませんでした</value>
+  </data>
+  <data name="CouldNotSaveSettingsFormat" xml:space="preserve">
+    <value>設定を保存できませんでした：{0}</value>
+  </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>インターフェイスをスキャン中…</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>接続をテスト中…</value>
+  </data>
+  <data name="ConnectedSentence" xml:space="preserve">
+    <value>接続しました。</value>
+  </data>
+  <data name="IfIndexFormat" xml:space="preserve">
+    <value>{0} の ifIndex は {1} です。</value>
+  </data>
+  <data name="InterfacesFoundFormat" xml:space="preserve">
+    <value>{0} 個のインターフェイスが見つかりました</value>
+  </data>
+  <data name="NoInterfacesFound" xml:space="preserve">
+    <value>インターフェイスが見つかりません</value>
+  </data>
+  <data name="EnterDeviceAddress" xml:space="preserve">
+    <value>デバイスのアドレスを入力してください</value>
+  </data>
+  <data name="EnterValidAddress" xml:space="preserve">
+    <value>有効な IPv4 / IPv6 アドレスまたはホスト名を入力してください</value>
+  </data>
+  <data name="PortRange" xml:space="preserve">
+    <value>Port は 1〜65535 で指定してください</value>
+  </data>
+  <data name="EnterCommunity" xml:space="preserve">
+    <value>community を入力してください</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>ユーザ名を入力してください</value>
+  </data>
+  <data name="AuthPasswordTooShortFormat" xml:space="preserve">
+    <value>認証パスワードは{0}文字以上にしてください</value>
+  </data>
+  <data name="PrivPasswordTooShortFormat" xml:space="preserve">
+    <value>暗号化パスワードは{0}文字以上にしてください</value>
+  </data>
+  <data name="AboutSummary" xml:space="preserve">
+    <value>SNMP でデバイスのインターフェイスのトラフィックをリアルタイムに監視します。</value>
+  </data>
+  <data name="AboutCompatibility" xml:space="preserve">
+    <value>SNMPv2c または SNMPv3（認証：MD5、SHA1、SHA256、SHA384、SHA512、暗号化：DES、AES-128）で、標準の IF-MIB と64ビットのインターフェイスカウンタを提供するデバイスに対応しています。</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>バージョン {0}</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Webサイト</value>
+  </data>
+  <data name="ReportIssue" xml:space="preserve">
+    <value>問題を報告</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>プライバシーポリシー</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>ライセンス（Apache 2.0）</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="ErrorConnectionFormat" xml:space="preserve">
+    <value>接続エラー：{0}</value>
+  </data>
+  <data name="ErrorTimeout" xml:space="preserve">
+    <value>接続がタイムアウトしました</value>
+  </data>
+  <data name="ErrorEngineIdMismatch" xml:space="preserve">
+    <value>デバイスの engine ID が一致しません</value>
+  </data>
+  <data name="ErrorCrypto" xml:space="preserve">
+    <value>暗号化処理に失敗しました</value>
+  </data>
+  <data name="ErrorInterfaceNotFoundFormat" xml:space="preserve">
+    <value>インターフェイス {0} が見つかりません</value>
+  </data>
+  <data name="ErrorInvalidPrivacyParameters" xml:space="preserve">
+    <value>暗号化パラメータが無効です</value>
+  </data>
+  <data name="ErrorMalformedFormat" xml:space="preserve">
+    <value>パケットの形式が正しくありません（{0}）</value>
+  </data>
+  <data name="ErrorStatusFormat" xml:space="preserve">
+    <value>SNMP エラー {0}（varbind {1}）</value>
+  </data>
+  <data name="ErrorDiscoveryIncomplete" xml:space="preserve">
+    <value>SNMPv3 ディスカバリが完了していません</value>
+  </data>
+  <data name="ErrorSecurityLevel" xml:space="preserve">
+    <value>セキュリティレベルがデバイスの設定と一致しません</value>
+  </data>
+  <data name="ErrorNoResponseToEncrypted" xml:space="preserve">
+    <value>デバイスが暗号化されたリクエストに応答しませんでした。暗号化パスワードとプロトコルを確認してください。</value>
+  </data>
+  <data name="ErrorTimeSync" xml:space="preserve">
+    <value>デバイスとの時刻同期に失敗しました</value>
+  </data>
+  <data name="ErrorUnexpectedPduFormat" xml:space="preserve">
+    <value>予期しない PDU タイプ 0x{0}</value>
+  </data>
+  <data name="ErrorUnexpectedResponseFormat" xml:space="preserve">
+    <value>予期しない応答：{0}</value>
+  </data>
+  <data name="ErrorUnknownUser" xml:space="preserve">
+    <value>ユーザ名が正しくありません</value>
+  </data>
+  <data name="ErrorUnsupportedVersionFormat" xml:space="preserve">
+    <value>サポートされていない SNMP バージョン {0}</value>
+  </data>
+  <data name="ErrorWrongAuth" xml:space="preserve">
+    <value>認証パスワードまたは認証プロトコルが正しくありません</value>
+  </data>
+  <data name="ErrorWrongPriv" xml:space="preserve">
+    <value>暗号化パスワードまたは暗号化プロトコルが正しくありません</value>
+  </data>
+</root>

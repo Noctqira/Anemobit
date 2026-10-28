@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Core logic: BER, SNMP, USM, rate calculation. Doesn't depend on WPF; builds and tests on any platform. -->
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Anemobit.Core.Tests" />
+    <!-- The app's tests share the Core tests' fakes (FakeTransport, FakeAgent), which need Core's internal types. -->
+    <InternalsVisibleTo Include="Anemobit.Tests" />
+  </ItemGroup>
+
+</Project>

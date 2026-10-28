@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Download" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>目前</value>
+  </data>
+  <data name="FiveMinuteAverage" xml:space="preserve">
+    <value>5 分鐘平均</value>
+  </data>
+  <data name="FiveMinutePeak" xml:space="preserve">
+    <value>5 分鐘峰值</value>
+  </data>
+  <data name="LastFiveMinutes" xml:space="preserve">
+    <value>最近 5 分鐘</value>
+  </data>
+  <data name="MaxFormat" xml:space="preserve">
+    <value>上限 {0}</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>無資料</value>
+  </data>
+  <data name="WaitingForData" xml:space="preserve">
+    <value>等待資料…</value>
+  </data>
+  <data name="DeviceUpFormat" xml:space="preserve">
+    <value>設備已開機 {0}</value>
+  </data>
+  <data name="DeviceUpSentenceFormat" xml:space="preserve">
+    <value>設備已開機 {0}。</value>
+  </data>
+  <data name="UpdatedFormat" xml:space="preserve">
+    <value>更新於 {0}</value>
+  </data>
+  <data name="InterfaceCountFormat" xml:space="preserve">
+    <value>{0} 個介面</value>
+  </data>
+  <data name="UptimeDayOne" xml:space="preserve">
+    <value>{0}天</value>
+  </data>
+  <data name="UptimeDayOther" xml:space="preserve">
+    <value>{0}天</value>
+  </data>
+  <data name="UptimeHourOne" xml:space="preserve">
+    <value>{0}小時</value>
+  </data>
+  <data name="UptimeHourOther" xml:space="preserve">
+    <value>{0}小時</value>
+  </data>
+  <data name="UptimeMinuteOne" xml:space="preserve">
+    <value>{0}分鐘</value>
+  </data>
+  <data name="UptimeMinuteOther" xml:space="preserve">
+    <value>{0}分鐘</value>
+  </data>
+  <data name="UptimeSeparator" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="StatusConnecting" xml:space="preserve">
+    <value>連線中…</value>
+  </data>
+  <data name="StatusErrorRetryFormat" xml:space="preserve">
+    <value>錯誤 · {0} 秒後重試</value>
+  </data>
+  <data name="StatusNotSet" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="TrayNotSet" xml:space="preserve">
+    <value>Anemobit：未設定</value>
+  </data>
+  <data name="NotConfiguredTitle" xml:space="preserve">
+    <value>尚未設定設備</value>
+  </data>
+  <data name="NotConfiguredMessage" xml:space="preserve">
+    <value>請輸入設備位址與 SNMP 帳號，並選擇要監控的介面。</value>
+  </data>
+  <data name="OpenSettings" xml:space="preserve">
+    <value>開啟設定</value>
+  </data>
+  <data name="OpenMainWindow" xml:space="preserve">
+    <value>開啟主視窗</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>設定…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="AboutAnemobit" xml:space="preserve">
+    <value>關於 Anemobit</value>
+  </data>
+  <data name="HideFloatingWindow" xml:space="preserve">
+    <value>隱藏浮動視窗</value>
+  </data>
+  <data name="ShowFloatingWindowMenu" xml:space="preserve">
+    <value>顯示浮動視窗</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>結束</value>
+  </data>
+  <data name="TrayFirstRunTitle" xml:space="preserve">
+    <value>Anemobit 正在執行</value>
+  </data>
+  <data name="TrayFirstRunMessage" xml:space="preserve">
+    <value>Anemobit 在系統匣中。若要讓圖示一直顯示，請把它從 ^ 拖到工作列上。</value>
+  </data>
+  <data name="SectionDevice" xml:space="preserve">
+    <value>設備</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>位址</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="SectionSecurity" xml:space="preserve">
+    <value>SNMP 安全性</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>安全模式</value>
+  </data>
+  <data name="Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="UserNameCommunity" xml:space="preserve">
+    <value>使用者名稱（Community）</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>認證協定</value>
+  </data>
+  <data name="AuthenticationPassword" xml:space="preserve">
+    <value>認證密碼</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>加密協定</value>
+  </data>
+  <data name="PrivacyPassword" xml:space="preserve">
+    <value>加密密碼</value>
+  </data>
+  <data name="ModeNoneExplanation" xml:space="preserve">
+    <value>SNMPv2c，只需 community。</value>
+  </data>
+  <data name="ModeAuthExplanation" xml:space="preserve">
+    <value>SNMPv3 只認證。</value>
+  </data>
+  <data name="ModePrivExplanation" xml:space="preserve">
+    <value>SNMPv3 認證並加密。</value>
+  </data>
+  <data name="SectionInterfaces" xml:space="preserve">
+    <value>介面</value>
+  </data>
+  <data name="ScanHint" xml:space="preserve">
+    <value>按「掃描介面」列出設備的介面。</value>
+  </data>
+  <data name="ScanInterfaces" xml:space="preserve">
+    <value>掃描介面</value>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>測試連線</value>
+  </data>
+  <data name="InterfacesFooter" xml:space="preserve">
+    <value>勾選一個或多個要監控的介面，每個介面在儀表板上各有一張卡片。</value>
+  </data>
+  <data name="FloatingWindowInterface" xml:space="preserve">
+    <value>浮動視窗顯示的介面</value>
+  </data>
+  <data name="SectionDisplay" xml:space="preserve">
+    <value>顯示</value>
+  </data>
+  <data name="RefreshRate" xml:space="preserve">
+    <value>更新速率</value>
+  </data>
+  <data name="SecondsFormat" xml:space="preserve">
+    <value>{0} 秒</value>
+  </data>
+  <data name="RateUnit" xml:space="preserve">
+    <value>速率單位</value>
+  </data>
+  <data name="UnitBits" xml:space="preserve">
+    <value>位元（Mbps）</value>
+  </data>
+  <data name="UnitBytes" xml:space="preserve">
+    <value>位元組（MB/s）</value>
+  </data>
+  <data name="ShowChartsForMultiple" xml:space="preserve">
+    <value>多個介面時顯示圖表</value>
+  </data>
+  <data name="DisplayFooter" xml:space="preserve">
+    <value>關閉時，監控兩個以上介面的卡片只顯示儀表與統計。</value>
+  </data>
+  <data name="SectionFloatingWindow" xml:space="preserve">
+    <value>浮動視窗</value>
+  </data>
+  <data name="ShowFloatingWindow" xml:space="preserve">
+    <value>顯示浮動視窗</value>
+  </data>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>永遠在最上層</value>
+  </data>
+  <data name="BackgroundOpacity" xml:space="preserve">
+    <value>背景不透明度</value>
+  </data>
+  <data name="FloatingFooter" xml:space="preserve">
+    <value>在桌面上顯示一個介面的速率。拖曳可移動位置，點一下可查看詳細資料。隱藏時仍可從系統匣圖示開啟。</value>
+  </data>
+  <data name="SectionColors" xml:space="preserve">
+    <value>顏色</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>恢復預設</value>
+  </data>
+  <data name="SectionLanguage" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="DisplayLanguage" xml:space="preserve">
+    <value>顯示語言</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>跟隨系統</value>
+  </data>
+  <data name="LanguageFooter" xml:space="preserve">
+    <value>重新啟動 Anemobit 後生效。</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>立即重新啟動</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>啟動</value>
+  </data>
+  <data name="OpenAtLogin" xml:space="preserve">
+    <value>登入時開啟</value>
+  </data>
+  <data name="StartupFooter" xml:space="preserve">
+    <value>立即生效。也可以在「工作管理員 → 啟動應用程式」中變更。</value>
+  </data>
+  <data name="StartupErrorFormat" xml:space="preserve">
+    <value>無法變更啟動設定：{0}</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>已儲存</value>
+  </data>
+  <data name="ChangesTakeEffect" xml:space="preserve">
+    <value>設定會在儲存後生效。</value>
+  </data>
+  <data name="CouldNotSaveCredentials" xml:space="preserve">
+    <value>community 或密碼無法寫入 Windows 認證管理員</value>
+  </data>
+  <data name="CouldNotSaveSettingsFormat" xml:space="preserve">
+    <value>無法儲存設定：{0}</value>
+  </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>掃描介面中…</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>測試連線中…</value>
+  </data>
+  <data name="ConnectedSentence" xml:space="preserve">
+    <value>連線成功。</value>
+  </data>
+  <data name="IfIndexFormat" xml:space="preserve">
+    <value>{0} 的 ifIndex 為 {1}。</value>
+  </data>
+  <data name="InterfacesFoundFormat" xml:space="preserve">
+    <value>找到 {0} 個介面</value>
+  </data>
+  <data name="NoInterfacesFound" xml:space="preserve">
+    <value>沒有找到任何介面</value>
+  </data>
+  <data name="EnterDeviceAddress" xml:space="preserve">
+    <value>請輸入設備位址</value>
+  </data>
+  <data name="EnterValidAddress" xml:space="preserve">
+    <value>請輸入有效的 IPv4、IPv6 位址或網域名稱</value>
+  </data>
+  <data name="PortRange" xml:space="preserve">
+    <value>Port 必須是 1–65535</value>
+  </data>
+  <data name="EnterCommunity" xml:space="preserve">
+    <value>請輸入 community</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>請輸入使用者名稱</value>
+  </data>
+  <data name="AuthPasswordTooShortFormat" xml:space="preserve">
+    <value>認證密碼至少需要 {0} 個字元</value>
+  </data>
+  <data name="PrivPasswordTooShortFormat" xml:space="preserve">
+    <value>加密密碼至少需要 {0} 個字元</value>
+  </data>
+  <data name="AboutSummary" xml:space="preserve">
+    <value>透過 SNMP 即時監控設備的介面流量。</value>
+  </data>
+  <data name="AboutCompatibility" xml:space="preserve">
+    <value>適用於透過 SNMPv2c 或 SNMPv3（認證：MD5、SHA1、SHA256、SHA384、SHA512；加密：DES、AES-128）提供標準 IF-MIB 與 64 位元介面計數器的設備。</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>版本 {0}</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>網站</value>
+  </data>
+  <data name="ReportIssue" xml:space="preserve">
+    <value>回報問題</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>隱私權政策</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>授權（Apache 2.0）</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="ErrorConnectionFormat" xml:space="preserve">
+    <value>連線錯誤：{0}</value>
+  </data>
+  <data name="ErrorTimeout" xml:space="preserve">
+    <value>連線逾時</value>
+  </data>
+  <data name="ErrorEngineIdMismatch" xml:space="preserve">
+    <value>設備 engine ID 不符</value>
+  </data>
+  <data name="ErrorCrypto" xml:space="preserve">
+    <value>加解密失敗</value>
+  </data>
+  <data name="ErrorInterfaceNotFoundFormat" xml:space="preserve">
+    <value>找不到介面 {0}</value>
+  </data>
+  <data name="ErrorInvalidPrivacyParameters" xml:space="preserve">
+    <value>加密參數錯誤</value>
+  </data>
+  <data name="ErrorMalformedFormat" xml:space="preserve">
+    <value>封包格式錯誤（{0}）</value>
+  </data>
+  <data name="ErrorStatusFormat" xml:space="preserve">
+    <value>SNMP 錯誤 {0}（varbind {1}）</value>
+  </data>
+  <data name="ErrorDiscoveryIncomplete" xml:space="preserve">
+    <value>尚未完成 SNMPv3 探索</value>
+  </data>
+  <data name="ErrorSecurityLevel" xml:space="preserve">
+    <value>安全層級與設備設定不符</value>
+  </data>
+  <data name="ErrorNoResponseToEncrypted" xml:space="preserve">
+    <value>設備沒有回應加密請求，請確認加密密碼與加密協定</value>
+  </data>
+  <data name="ErrorTimeSync" xml:space="preserve">
+    <value>與設備的時間同步失敗</value>
+  </data>
+  <data name="ErrorUnexpectedPduFormat" xml:space="preserve">
+    <value>非預期的 PDU 類型 0x{0}</value>
+  </data>
+  <data name="ErrorUnexpectedResponseFormat" xml:space="preserve">
+    <value>非預期的回應：{0}</value>
+  </data>
+  <data name="ErrorUnknownUser" xml:space="preserve">
+    <value>使用者名稱錯誤</value>
+  </data>
+  <data name="ErrorUnsupportedVersionFormat" xml:space="preserve">
+    <value>不支援的 SNMP 版本 {0}</value>
+  </data>
+  <data name="ErrorWrongAuth" xml:space="preserve">
+    <value>認證密碼或認證協定錯誤</value>
+  </data>
+  <data name="ErrorWrongPriv" xml:space="preserve">
+    <value>加密密碼或加密協定錯誤</value>
+  </data>
+</root>

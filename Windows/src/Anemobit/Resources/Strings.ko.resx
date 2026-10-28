@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Download" xml:space="preserve">
+    <value>다운로드</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>업로드</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>현재</value>
+  </data>
+  <data name="FiveMinuteAverage" xml:space="preserve">
+    <value>5분 평균</value>
+  </data>
+  <data name="FiveMinutePeak" xml:space="preserve">
+    <value>5분 최고</value>
+  </data>
+  <data name="LastFiveMinutes" xml:space="preserve">
+    <value>최근 5분</value>
+  </data>
+  <data name="MaxFormat" xml:space="preserve">
+    <value>최대 {0}</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>데이터 없음</value>
+  </data>
+  <data name="WaitingForData" xml:space="preserve">
+    <value>데이터를 기다리는 중…</value>
+  </data>
+  <data name="DeviceUpFormat" xml:space="preserve">
+    <value>장치 가동 시간 {0}</value>
+  </data>
+  <data name="DeviceUpSentenceFormat" xml:space="preserve">
+    <value>장치 가동 시간 {0}.</value>
+  </data>
+  <data name="UpdatedFormat" xml:space="preserve">
+    <value>{0} 업데이트됨</value>
+  </data>
+  <data name="InterfaceCountFormat" xml:space="preserve">
+    <value>인터페이스 {0}개</value>
+  </data>
+  <data name="UptimeDayOne" xml:space="preserve">
+    <value>{0}일</value>
+  </data>
+  <data name="UptimeDayOther" xml:space="preserve">
+    <value>{0}일</value>
+  </data>
+  <data name="UptimeHourOne" xml:space="preserve">
+    <value>{0}시간</value>
+  </data>
+  <data name="UptimeHourOther" xml:space="preserve">
+    <value>{0}시간</value>
+  </data>
+  <data name="UptimeMinuteOne" xml:space="preserve">
+    <value>{0}분</value>
+  </data>
+  <data name="UptimeMinuteOther" xml:space="preserve">
+    <value>{0}분</value>
+  </data>
+  <data name="UptimeSeparator" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="StatusConnecting" xml:space="preserve">
+    <value>연결 중…</value>
+  </data>
+  <data name="StatusErrorRetryFormat" xml:space="preserve">
+    <value>오류 · {0}초 후 재시도</value>
+  </data>
+  <data name="StatusNotSet" xml:space="preserve">
+    <value>설정 안 됨</value>
+  </data>
+  <data name="TrayNotSet" xml:space="preserve">
+    <value>Anemobit: 설정 안 됨</value>
+  </data>
+  <data name="NotConfiguredTitle" xml:space="preserve">
+    <value>장치가 설정되지 않음</value>
+  </data>
+  <data name="NotConfiguredMessage" xml:space="preserve">
+    <value>장치 주소와 SNMP 계정을 입력한 후 모니터링할 인터페이스를 선택하세요.</value>
+  </data>
+  <data name="OpenSettings" xml:space="preserve">
+    <value>설정 열기</value>
+  </data>
+  <data name="OpenMainWindow" xml:space="preserve">
+    <value>메인 윈도우 열기</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>설정…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="AboutAnemobit" xml:space="preserve">
+    <value>Anemobit 정보</value>
+  </data>
+  <data name="HideFloatingWindow" xml:space="preserve">
+    <value>플로팅 창 숨기기</value>
+  </data>
+  <data name="ShowFloatingWindowMenu" xml:space="preserve">
+    <value>플로팅 창 표시</value>
+  </data>
+  <data name="Quit" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="TrayFirstRunTitle" xml:space="preserve">
+    <value>Anemobit가 실행 중입니다</value>
+  </data>
+  <data name="TrayFirstRunMessage" xml:space="preserve">
+    <value>Anemobit는 시스템 트레이에 있습니다. 아이콘을 항상 표시하려면 ^에서 작업 표시줄로 끌어 놓으세요.</value>
+  </data>
+  <data name="SectionDevice" xml:space="preserve">
+    <value>장치</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="SectionSecurity" xml:space="preserve">
+    <value>SNMP 보안</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>보안 모드</value>
+  </data>
+  <data name="Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="UserNameCommunity" xml:space="preserve">
+    <value>사용자 이름(Community)</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>인증 프로토콜</value>
+  </data>
+  <data name="AuthenticationPassword" xml:space="preserve">
+    <value>인증 비밀번호</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>암호화 프로토콜</value>
+  </data>
+  <data name="PrivacyPassword" xml:space="preserve">
+    <value>암호화 비밀번호</value>
+  </data>
+  <data name="ModeNoneExplanation" xml:space="preserve">
+    <value>SNMPv2c(community만 사용).</value>
+  </data>
+  <data name="ModeAuthExplanation" xml:space="preserve">
+    <value>SNMPv3(인증만).</value>
+  </data>
+  <data name="ModePrivExplanation" xml:space="preserve">
+    <value>SNMPv3(인증 및 암호화).</value>
+  </data>
+  <data name="SectionInterfaces" xml:space="preserve">
+    <value>인터페이스</value>
+  </data>
+  <data name="ScanHint" xml:space="preserve">
+    <value>'인터페이스 검색'을 눌러 장치의 인터페이스를 표시합니다.</value>
+  </data>
+  <data name="ScanInterfaces" xml:space="preserve">
+    <value>인터페이스 검색</value>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>연결 테스트</value>
+  </data>
+  <data name="InterfacesFooter" xml:space="preserve">
+    <value>모니터링할 인터페이스를 하나 이상 선택하세요. 인터페이스마다 대시보드에 카드가 표시됩니다.</value>
+  </data>
+  <data name="FloatingWindowInterface" xml:space="preserve">
+    <value>플로팅 창에 표시할 인터페이스</value>
+  </data>
+  <data name="SectionDisplay" xml:space="preserve">
+    <value>표시</value>
+  </data>
+  <data name="RefreshRate" xml:space="preserve">
+    <value>새로 고침 간격</value>
+  </data>
+  <data name="SecondsFormat" xml:space="preserve">
+    <value>{0}초</value>
+  </data>
+  <data name="RateUnit" xml:space="preserve">
+    <value>속도 단위</value>
+  </data>
+  <data name="UnitBits" xml:space="preserve">
+    <value>비트(Mbps)</value>
+  </data>
+  <data name="UnitBytes" xml:space="preserve">
+    <value>바이트(MB/s)</value>
+  </data>
+  <data name="ShowChartsForMultiple" xml:space="preserve">
+    <value>여러 인터페이스에서도 차트 표시</value>
+  </data>
+  <data name="DisplayFooter" xml:space="preserve">
+    <value>끄면 두 개 이상의 인터페이스를 모니터링할 때 카드에 게이지와 통계만 표시됩니다.</value>
+  </data>
+  <data name="SectionFloatingWindow" xml:space="preserve">
+    <value>플로팅 창</value>
+  </data>
+  <data name="ShowFloatingWindow" xml:space="preserve">
+    <value>플로팅 창 표시</value>
+  </data>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>항상 위에 표시</value>
+  </data>
+  <data name="BackgroundOpacity" xml:space="preserve">
+    <value>배경 불투명도</value>
+  </data>
+  <data name="FloatingFooter" xml:space="preserve">
+    <value>바탕 화면에 인터페이스 하나의 속도를 표시합니다. 끌어서 이동하고, 클릭하면 자세한 정보를 표시합니다. 숨겨도 시스템 트레이 아이콘에서 열 수 있습니다.</value>
+  </data>
+  <data name="SectionColors" xml:space="preserve">
+    <value>색상</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>기본값으로 재설정</value>
+  </data>
+  <data name="SectionLanguage" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="DisplayLanguage" xml:space="preserve">
+    <value>표시 언어</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>시스템 설정 따르기</value>
+  </data>
+  <data name="LanguageFooter" xml:space="preserve">
+    <value>Anemobit를 다시 시작하면 적용됩니다.</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>지금 다시 시작</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="OpenAtLogin" xml:space="preserve">
+    <value>로그인 시 열기</value>
+  </data>
+  <data name="StartupFooter" xml:space="preserve">
+    <value>즉시 적용됩니다. '작업 관리자 → 시작 앱'에서도 변경할 수 있습니다.</value>
+  </data>
+  <data name="StartupErrorFormat" xml:space="preserve">
+    <value>시작 설정을 변경할 수 없습니다: {0}</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>저장됨</value>
+  </data>
+  <data name="ChangesTakeEffect" xml:space="preserve">
+    <value>설정은 저장 후 적용됩니다.</value>
+  </data>
+  <data name="CouldNotSaveCredentials" xml:space="preserve">
+    <value>community 또는 비밀번호를 Windows 자격 증명 관리자에 저장할 수 없습니다</value>
+  </data>
+  <data name="CouldNotSaveSettingsFormat" xml:space="preserve">
+    <value>설정을 저장할 수 없습니다: {0}</value>
+  </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>인터페이스 검색 중…</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>연결 테스트 중…</value>
+  </data>
+  <data name="ConnectedSentence" xml:space="preserve">
+    <value>연결되었습니다.</value>
+  </data>
+  <data name="IfIndexFormat" xml:space="preserve">
+    <value>{0}의 ifIndex는 {1}입니다.</value>
+  </data>
+  <data name="InterfacesFoundFormat" xml:space="preserve">
+    <value>인터페이스 {0}개를 찾았습니다</value>
+  </data>
+  <data name="NoInterfacesFound" xml:space="preserve">
+    <value>인터페이스를 찾을 수 없습니다</value>
+  </data>
+  <data name="EnterDeviceAddress" xml:space="preserve">
+    <value>장치 주소를 입력하세요</value>
+  </data>
+  <data name="EnterValidAddress" xml:space="preserve">
+    <value>유효한 IPv4 또는 IPv6 주소나 호스트 이름을 입력하세요</value>
+  </data>
+  <data name="PortRange" xml:space="preserve">
+    <value>Port는 1–65535 사이여야 합니다</value>
+  </data>
+  <data name="EnterCommunity" xml:space="preserve">
+    <value>community를 입력하세요</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>사용자 이름을 입력하세요</value>
+  </data>
+  <data name="AuthPasswordTooShortFormat" xml:space="preserve">
+    <value>인증 비밀번호는 {0}자 이상이어야 합니다</value>
+  </data>
+  <data name="PrivPasswordTooShortFormat" xml:space="preserve">
+    <value>암호화 비밀번호는 {0}자 이상이어야 합니다</value>
+  </data>
+  <data name="AboutSummary" xml:space="preserve">
+    <value>SNMP로 장치의 인터페이스 트래픽을 실시간으로 모니터링합니다.</value>
+  </data>
+  <data name="AboutCompatibility" xml:space="preserve">
+    <value>SNMPv2c 또는 SNMPv3(인증: MD5, SHA1, SHA256, SHA384, SHA512, 암호화: DES, AES-128)를 통해 표준 IF-MIB와 64비트 인터페이스 카운터를 제공하는 장치를 지원합니다.</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>버전 {0}</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>웹 사이트</value>
+  </data>
+  <data name="ReportIssue" xml:space="preserve">
+    <value>문제 보고</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>개인정보 처리방침</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>라이선스(Apache 2.0)</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="ErrorConnectionFormat" xml:space="preserve">
+    <value>연결 오류: {0}</value>
+  </data>
+  <data name="ErrorTimeout" xml:space="preserve">
+    <value>연결 시간이 초과되었습니다</value>
+  </data>
+  <data name="ErrorEngineIdMismatch" xml:space="preserve">
+    <value>장치 engine ID가 일치하지 않습니다</value>
+  </data>
+  <data name="ErrorCrypto" xml:space="preserve">
+    <value>암호화 처리에 실패했습니다</value>
+  </data>
+  <data name="ErrorInterfaceNotFoundFormat" xml:space="preserve">
+    <value>인터페이스 {0}을(를) 찾을 수 없습니다</value>
+  </data>
+  <data name="ErrorInvalidPrivacyParameters" xml:space="preserve">
+    <value>암호화 매개변수가 잘못되었습니다</value>
+  </data>
+  <data name="ErrorMalformedFormat" xml:space="preserve">
+    <value>패킷 형식이 잘못되었습니다({0})</value>
+  </data>
+  <data name="ErrorStatusFormat" xml:space="preserve">
+    <value>SNMP 오류 {0}(varbind {1})</value>
+  </data>
+  <data name="ErrorDiscoveryIncomplete" xml:space="preserve">
+    <value>SNMPv3 검색이 완료되지 않았습니다</value>
+  </data>
+  <data name="ErrorSecurityLevel" xml:space="preserve">
+    <value>보안 수준이 장치 설정과 일치하지 않습니다</value>
+  </data>
+  <data name="ErrorNoResponseToEncrypted" xml:space="preserve">
+    <value>장치가 암호화된 요청에 응답하지 않았습니다. 암호화 비밀번호와 프로토콜을 확인하세요.</value>
+  </data>
+  <data name="ErrorTimeSync" xml:space="preserve">
+    <value>장치와의 시간 동기화에 실패했습니다</value>
+  </data>
+  <data name="ErrorUnexpectedPduFormat" xml:space="preserve">
+    <value>예기치 않은 PDU 유형 0x{0}</value>
+  </data>
+  <data name="ErrorUnexpectedResponseFormat" xml:space="preserve">
+    <value>예기치 않은 응답: {0}</value>
+  </data>
+  <data name="ErrorUnknownUser" xml:space="preserve">
+    <value>사용자 이름이 올바르지 않습니다</value>
+  </data>
+  <data name="ErrorUnsupportedVersionFormat" xml:space="preserve">
+    <value>지원되지 않는 SNMP 버전 {0}</value>
+  </data>
+  <data name="ErrorWrongAuth" xml:space="preserve">
+    <value>인증 비밀번호 또는 인증 프로토콜이 올바르지 않습니다</value>
+  </data>
+  <data name="ErrorWrongPriv" xml:space="preserve">
+    <value>암호화 비밀번호 또는 암호화 프로토콜이 올바르지 않습니다</value>
+  </data>
+</root>

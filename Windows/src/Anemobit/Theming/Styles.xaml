@@ -1,0 +1,235 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Anemobit.Converters">
+
+  <converters:VisibilityConverter x:Key="VisibleWhen" />
+  <converters:VisibilityConverter x:Key="CollapsedWhen" Invert="True" />
+  <converters:HexColorConverter x:Key="HexToBrush" />
+
+  <FontFamily x:Key="IconFont">Segoe Fluent Icons, Segoe MDL2 Assets</FontFamily>
+  <FontFamily x:Key="NumberFont">Segoe UI Variable Display, Segoe UI</FontFamily>
+
+  <!-- Card: a light solid fill with a thin border on the Mica / lavender background (same as .card() on macOS). -->
+  <Style x:Key="Card" TargetType="Border">
+    <Setter Property="Background" Value="{DynamicResource CardFillBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource CardStrokeBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="18" />
+    <Setter Property="Padding" Value="18" />
+  </Style>
+
+  <!-- Settings section card: content adds its own padding, with dividers between rows. -->
+  <Style x:Key="SectionCard" TargetType="Border" BasedOn="{StaticResource Card}">
+    <Setter Property="Padding" Value="0" />
+  </Style>
+
+  <Style x:Key="SectionTitle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+    <Setter Property="Margin" Value="4,0,4,8" />
+  </Style>
+
+  <Style x:Key="Footnote" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="Margin" Value="4,6,4,0" />
+  </Style>
+
+  <Style x:Key="Caption" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+  </Style>
+
+  <Style x:Key="Icon" TargetType="TextBlock">
+    <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+
+  <!-- Divider inside a card -->
+  <Style x:Key="RowDivider" TargetType="Rectangle">
+    <Setter Property="Height" Value="1" />
+    <Setter Property="Fill" Value="{DynamicResource CardStrokeBrush}" />
+    <Setter Property="Margin" Value="14,0,0,0" />
+  </Style>
+
+  <!-- Custom option row (same as ThemedSegmentedPicker on macOS): light track + rounded selection fill. -->
+  <Style x:Key="SegmentedPicker" TargetType="ListBox">
+    <Setter Property="Background" Value="{DynamicResource SegmentTrackBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="3" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <UniformGrid Rows="1" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBox">
+          <Border Background="{TemplateBinding Background}" CornerRadius="9" Padding="{TemplateBinding Padding}">
+            <ItemsPresenter />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="ListBoxItem">
+          <Setter Property="Cursor" Value="Hand" />
+          <Setter Property="Focusable" Value="True" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="ListBoxItem">
+                <Border x:Name="Chip" CornerRadius="7" Padding="10,5" Background="Transparent">
+                  <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="IsSelected" Value="True">
+                    <Setter TargetName="Chip" Property="Background" Value="{DynamicResource SegmentSelectedBrush}" />
+                    <Setter Property="FontWeight" Value="SemiBold" />
+                  </Trigger>
+                  <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                      <Condition Property="IsMouseOver" Value="True" />
+                      <Condition Property="IsSelected" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="Chip" Property="Background" Value="{DynamicResource SegmentTrackBrush}" />
+                  </MultiTrigger>
+                  <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter TargetName="Chip" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                    <Setter TargetName="Chip" Property="BorderThickness" Value="1" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <TextBlock Text="{Binding Converter={x:Static converters:DisplayNameConverter.Instance}}" TextTrimming="CharacterEllipsis" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Windows 11 style toggle switch (missing from WPF's Fluent theme): restyles CheckBox as a pill and knob, using the accent color when on. -->
+  <Style x:Key="ToggleSwitch" TargetType="CheckBox">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="CheckBox">
+          <Grid Background="Transparent">
+            <Border x:Name="Track" Width="40" Height="20" CornerRadius="10" BorderThickness="1"
+                    BorderBrush="{DynamicResource SecondaryTextBrush}" Background="Transparent" />
+            <Ellipse x:Name="Knob" Width="12" Height="12" HorizontalAlignment="Left" Margin="4,0,0,0"
+                     Fill="{DynamicResource SecondaryTextBrush}" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+              <Setter TargetName="Track" Property="Background" Value="{DynamicResource AccentBrush}" />
+              <Setter TargetName="Track" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+              <Setter TargetName="Knob" Property="Fill" Value="White" />
+              <Setter TargetName="Knob" Property="Width" Value="14" />
+              <Setter TargetName="Knob" Property="Height" Value="14" />
+              <Setter TargetName="Knob" Property="Margin" Value="23,0,0,0" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Track" Property="Opacity" Value="0.85" />
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+              <Setter TargetName="Track" Property="BorderThickness" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.4" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Text-style button (links, actions inside cards). -->
+  <Style x:Key="LinkButton" TargetType="Button">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border Background="Transparent" Padding="{TemplateBinding Padding}">
+            <ContentPresenter />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Opacity" Value="0.75" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.4" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Full-row clickable button (link rows on the About page). -->
+  <Style x:Key="RowButton" TargetType="Button">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Row" Background="Transparent" Padding="14,11">
+            <ContentPresenter />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Row" Property="Background" Value="{DynamicResource SegmentTrackBrush}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Primary button (Save, Open Settings): accent background. -->
+  <Style x:Key="AccentButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OnAccentBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="16,6" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+  </Style>
+
+  <!-- Lavender tint window background: translucent, over Mica (same as ThemedBackground on macOS). -->
+  <DataTemplate x:Key="ThemedBackgroundTemplate">
+    <Grid>
+      <Rectangle>
+        <Rectangle.Fill>
+          <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0" Color="{DynamicResource TintTopColor}" />
+            <GradientStop Offset="1" Color="{DynamicResource TintBottomColor}" />
+          </LinearGradientBrush>
+        </Rectangle.Fill>
+      </Rectangle>
+      <Rectangle>
+        <Rectangle.Fill>
+          <RadialGradientBrush Center="1,0" GradientOrigin="1,0" RadiusX="0.9" RadiusY="0.9">
+            <GradientStop Offset="0" Color="{DynamicResource GlowColor}" />
+            <GradientStop Offset="1" Color="Transparent" />
+          </RadialGradientBrush>
+        </Rectangle.Fill>
+      </Rectangle>
+    </Grid>
+  </DataTemplate>
+</ResourceDictionary>
