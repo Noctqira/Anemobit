@@ -1,0 +1,4 @@
+# GUI app launched from the application list (.desktop); there's no command-line usage to document.
+anemobit: no-manual-page [usr/bin/anemobit]
+# Not uploaded to the official Debian archive, so there's no ITP bug.
+anemobit: initial-upload-closes-no-bugs [usr/share/doc/anemobit/changelog.Debian.gz:1]

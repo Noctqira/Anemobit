@@ -1,0 +1,601 @@
+# Japanese translation for Anemobit.
+# Copyright © 2026 Noctqira
+# This file is distributed under the same license as the anemobit package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: anemobit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-23 13:42+0800\n"
+"PO-Revision-Date: 2026-10-12 00:00+0800\n"
+"Last-Translator: Noctqira\n"
+"Language-Team: Noctqira\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:2
+msgid "Anemobit"
+msgstr ""
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:3
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:7
+msgid "Real-time interface traffic of devices over SNMP"
+msgstr ""
+"SNMP でデバイスのインターフェイスのトラフィックをリアルタイムに監視します"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon!
+#: data/io.github.noctqira.Anemobit.desktop.in.in:10
+msgid "SNMP;traffic;bandwidth;network;"
+msgstr "SNMP;traffic;bandwidth;network;トラフィック;帯域幅;ネットワーク;"
+
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:9 src/about.rs:15
+msgid ""
+"Works with devices that provide the standard IF-MIB with 64-bit interface "
+"counters over SNMPv2c or SNMPv3 (authentication: MD5, SHA1, SHA224, SHA256, "
+"SHA384, SHA512; privacy: DES, AES-128)."
+msgstr ""
+"SNMPv2c または SNMPv3（認証：MD5、SHA1、SHA224、SHA256、SHA384、SHA512、暗号"
+"化：DES、AES-128）で、標準の IF-MIB と64ビットのインターフェイスカウンタを提"
+"供するデバイスに対応しています。"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:43
+msgid "Whether the hint about a missing system tray was shown"
+msgstr "システムトレイがないことの案内を表示済みかどうか"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:50
+msgid "Device address (IPv4, IPv6 or host name)"
+msgstr "デバイスのアドレス（IPv4、IPv6、またはホスト名）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:57
+msgid "Monitored interfaces (ifName), in display order"
+msgstr "監視するインターフェイス（ifName、表示順）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:77
+msgid "Refresh interval in seconds (1, 5 or 10)"
+msgstr "更新間隔（秒、1・5・10）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:84
+msgid "Interface shown in the system tray and the compact window"
+msgstr "システムトレイとコンパクトウインドウに表示するインターフェイス"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:91
+msgid ""
+"Show charts on interface cards when two or more interfaces are monitored"
+msgstr ""
+"2つ以上のインターフェイスを監視するとき、インターフェイスカードにグラフを表示"
+"する"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:95
+msgid "Download color as #RRGGBB; empty for the theme default"
+msgstr "ダウンロードの色（#RRGGBB）。空の場合はテーマの既定の色"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:99
+msgid "Upload color as #RRGGBB; empty for the theme default"
+msgstr "アップロードの色（#RRGGBB）。空の場合はテーマの既定の色"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:104
+msgid "Background opacity of the main window (0–1)"
+msgstr "メインウインドウの背景の不透明度（0〜1）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:109
+msgid "Background opacity of the window opened from the system tray (0–1)"
+msgstr "システムトレイから開くウインドウの背景の不透明度（0〜1）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:113
+msgid ""
+"Display language (en, zh_TW, ja or ko); empty to follow the system. Takes "
+"effect after a restart"
+msgstr "表示言語（en、zh_TW、ja、ko）。空の場合はシステムに従う。再起動後に反映"
+
+#: data/resources/ui/interface-card.ui:112
+msgid "Current"
+msgstr "現在"
+
+#: data/resources/ui/interface-card.ui:125
+msgid "5-min Average"
+msgstr "5分間平均"
+
+#: data/resources/ui/interface-card.ui:138
+msgid "5-min Peak"
+msgstr "5分間ピーク"
+
+#: data/resources/ui/interface-card.ui:204
+msgid "Last 5 Minutes"
+msgstr "過去5分間"
+
+#: data/resources/ui/popup.ui:26 data/resources/ui/window.ui:76
+msgid "Device Not Configured"
+msgstr "デバイスが未設定です"
+
+#: data/resources/ui/popup.ui:35 data/resources/ui/window.ui:87
+msgid ""
+"Enter the device address and SNMP account, then choose the interface to "
+"monitor."
+msgstr ""
+"デバイスのアドレスと SNMP アカウントを入力し、監視するインターフェイスを選択"
+"してください。"
+
+#: data/resources/ui/popup.ui:45 data/resources/ui/window.ui:98
+msgid "Open Settings"
+msgstr "設定を開く"
+
+#: data/resources/ui/popup.ui:233 src/tray.rs:49
+msgid "Open Main Window"
+msgstr "メインウインドウを開く"
+
+#: data/resources/ui/popup.ui:243 src/tray.rs:54
+msgid "Settings…"
+msgstr "設定…"
+
+#: data/resources/ui/popup.ui:254 src/tray.rs:74
+msgid "Quit"
+msgstr "終了"
+
+#: data/resources/ui/settings-dialog.ui:6 data/resources/ui/window.ui:32
+msgid "Settings"
+msgstr "設定"
+
+#: data/resources/ui/settings-dialog.ui:19
+msgid "Device"
+msgstr "デバイス"
+
+#: data/resources/ui/settings-dialog.ui:22
+msgid "Address"
+msgstr "アドレス"
+
+#: data/resources/ui/settings-dialog.ui:28
+msgid "Port"
+msgstr "Port"
+
+#: data/resources/ui/settings-dialog.ui:37
+msgid "SNMP Security"
+msgstr "SNMP セキュリティ"
+
+#: data/resources/ui/settings-dialog.ui:40
+msgid "Security"
+msgstr "セキュリティモード"
+
+#: data/resources/ui/settings-dialog.ui:71
+msgid "Community"
+msgstr "Community"
+
+#: data/resources/ui/settings-dialog.ui:76
+msgid "User Name (Community)"
+msgstr "ユーザ名（Community）"
+
+#: data/resources/ui/settings-dialog.ui:81
+msgid "Authentication"
+msgstr "認証プロトコル"
+
+#: data/resources/ui/settings-dialog.ui:86
+msgid "Authentication Password"
+msgstr "認証パスワード"
+
+#: data/resources/ui/settings-dialog.ui:91
+msgid "Privacy"
+msgstr "暗号化プロトコル"
+
+#: data/resources/ui/settings-dialog.ui:116
+msgid "Privacy Password"
+msgstr "暗号化パスワード"
+
+#: data/resources/ui/settings-dialog.ui:135
+msgid "Interfaces"
+msgstr "インターフェイス"
+
+#: data/resources/ui/settings-dialog.ui:136
+msgid ""
+"Select one or more interfaces to monitor. Each gets its own card on the "
+"dashboard."
+msgstr ""
+"監視するインターフェイスを1つ以上選択してください。インターフェイスごとにダッ"
+"シュボードにカードが表示されます。"
+
+#: data/resources/ui/settings-dialog.ui:139
+msgid "Scan to list the device's interfaces."
+msgstr ""
+"「インターフェイスをスキャン」でデバイスのインターフェイスを一覧表示します。"
+
+#: data/resources/ui/settings-dialog.ui:147
+msgid "System Tray Interface"
+msgstr "システムトレイに表示するインターフェイス"
+
+#: data/resources/ui/settings-dialog.ui:152
+msgid "Scan Interfaces"
+msgstr "インターフェイスをスキャン"
+
+#: data/resources/ui/settings-dialog.ui:158
+msgid "Test Connection"
+msgstr "接続をテスト"
+
+#: data/resources/ui/settings-dialog.ui:167
+msgid "Display"
+msgstr "表示"
+
+#: data/resources/ui/settings-dialog.ui:168
+msgid ""
+"When off, interface cards show only gauges and statistics while two or more "
+"interfaces are monitored."
+msgstr ""
+"オフのときは、2つ以上のインターフェイスを監視している間、カードにはメーターと"
+"統計だけが表示されます。"
+
+#: data/resources/ui/settings-dialog.ui:171
+msgid "Refresh Rate"
+msgstr "更新間隔"
+
+#: data/resources/ui/settings-dialog.ui:199
+msgid "Rate Unit"
+msgstr "速度の単位"
+
+#: data/resources/ui/settings-dialog.ui:209
+msgid "Bits (Mbps)"
+msgstr "ビット（Mbps）"
+
+#: data/resources/ui/settings-dialog.ui:215
+msgid "Bytes (MB/s)"
+msgstr "バイト（MB/s）"
+
+#: data/resources/ui/settings-dialog.ui:224
+msgid "Show Charts for Multiple Interfaces"
+msgstr "複数のインターフェイスでもグラフを表示"
+
+#: data/resources/ui/settings-dialog.ui:229
+msgid "Main Window Background Opacity"
+msgstr "メインウインドウの背景の不透明度"
+
+#: data/resources/ui/settings-dialog.ui:251
+msgid "Tray Window Background Opacity"
+msgstr "トレイウインドウの背景の不透明度"
+
+#: data/resources/ui/settings-dialog.ui:273 src/tray.rs:62
+msgid "Show Compact Window"
+msgstr "コンパクトウインドウを表示"
+
+#: data/resources/ui/settings-dialog.ui:274
+msgid "A small window with the rates, for desktops without a system tray."
+msgstr ""
+"速度だけを表示する小さなウインドウです。システムトレイのないデスクトップ向け"
+"です。"
+
+#: data/resources/ui/settings-dialog.ui:282
+msgid "Language"
+msgstr "言語"
+
+#: data/resources/ui/settings-dialog.ui:283
+msgid "Takes effect after Anemobit restarts."
+msgstr "Anemobit の再起動後に反映されます。"
+
+#: data/resources/ui/settings-dialog.ui:286
+msgid "Display Language"
+msgstr "表示言語"
+
+#: data/resources/ui/settings-dialog.ui:291
+msgid "Restart Now"
+msgstr "今すぐ再起動"
+
+#: data/resources/ui/settings-dialog.ui:312
+msgid "Colors"
+msgstr "カラー"
+
+#: data/resources/ui/settings-dialog.ui:317
+#: data/resources/ui/settings-dialog.ui:340
+msgid "Reset"
+msgstr "デフォルトに戻す"
+
+#: data/resources/ui/settings-dialog.ui:364
+msgid "Startup"
+msgstr "起動"
+
+#: data/resources/ui/settings-dialog.ui:365
+msgid "Takes effect immediately."
+msgstr "すぐに反映されます。"
+
+#: data/resources/ui/settings-dialog.ui:368
+msgid "Open at Login"
+msgstr "ログイン時に開く"
+
+#: data/resources/ui/settings-dialog.ui:411
+msgid "Save"
+msgstr "保存"
+
+#: data/resources/ui/window.ui:26
+msgid "Main Menu"
+msgstr "メインメニュー"
+
+#: data/resources/ui/window.ui:154
+msgid "_About Anemobit"
+msgstr "Anemobit について(_A)"
+
+#: data/resources/ui/window.ui:158
+msgid "_Quit"
+msgstr "終了(_Q)"
+
+#: src/about.rs:13
+msgid "Real-time interface traffic of devices over SNMP."
+msgstr ""
+"SNMP でデバイスのインターフェイスのトラフィックをリアルタイムに監視します。"
+
+#: src/about.rs:28
+msgid "Privacy Policy"
+msgstr "プライバシーポリシー"
+
+#: src/application.rs:397
+msgid "System Tray Not Available"
+msgstr "システムトレイを利用できません"
+
+#: src/application.rs:399
+msgid ""
+"To show the rate in the top bar, install and enable the AppIndicator "
+"extension. You can also turn on the compact window in Settings."
+msgstr ""
+"トップバーに速度を表示するには、AppIndicator 拡張機能をインストールして有効に"
+"してください。設定でコンパクトウインドウをオンにすることもできます。"
+
+#: src/application.rs:402
+msgid "OK"
+msgstr "OK"
+
+#: src/compact_window.rs:44 src/traffic_model.rs:182
+msgid "Anemobit: Not Set"
+msgstr "Anemobit：未設定"
+
+#: src/popup.rs:194 src/window.rs:211
+msgid "Device up {}"
+msgstr "デバイス稼働時間 {}"
+
+#: src/settings_dialog.rs:219
+msgid "Follow System"
+msgstr "システムに従う"
+
+#: src/settings_dialog.rs:645
+msgid "Changes take effect when you save."
+msgstr "設定は保存後に反映されます。"
+
+#: src/settings_dialog.rs:698
+msgid "Scanning interfaces…"
+msgstr "インターフェイスをスキャン中…"
+
+#: src/settings_dialog.rs:709
+msgid "No interfaces found"
+msgstr "インターフェイスが見つかりません"
+
+#. Translators: {} is the number of interfaces.
+#: src/settings_dialog.rs:712
+msgid "Interfaces found: {}"
+msgstr "{} 個のインターフェイスが見つかりました"
+
+#: src/settings_dialog.rs:725
+msgid "Testing connection…"
+msgstr "接続をテスト中…"
+
+#: src/settings_dialog.rs:727
+msgid "Connected."
+msgstr "接続しました。"
+
+#. Translators: {} is an uptime such as "12 days, 5 hours".
+#: src/settings_dialog.rs:731
+msgid "Device up {}."
+msgstr "デバイス稼働時間 {}。"
+
+#: src/settings_dialog.rs:766
+msgid "Saved"
+msgstr "保存しました"
+
+#: src/settings_dialog.rs:770
+msgid "Could not save the community or passwords to the keyring"
+msgstr "community またはパスワードをキーリングに保存できませんでした"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:801
+msgid "Could not save the language setting: {}"
+msgstr "言語の設定を保存できませんでした：{}"
+
+#: src/settings_dialog.rs:825
+msgid "Could not restart Anemobit: {}"
+msgstr "Anemobit を再起動できませんでした：{}"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:844
+msgid "Could not change the startup setting: {}"
+msgstr "起動の設定を変更できませんでした：{}"
+
+#. Translators: {0} is an interface name, {1} its index.
+#: src/text.rs:33
+msgid "{0} is ifIndex {1}."
+msgstr "{0} の ifIndex は {1} です。"
+
+#: src/text.rs:43
+msgid "{} day"
+msgid_plural "{} days"
+msgstr[0] "{}日"
+
+#: src/text.rs:44
+msgid "{} hour"
+msgid_plural "{} hours"
+msgstr[0] "{}時間"
+
+#: src/text.rs:45
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{}分"
+
+#. Translators: two uptime units, as in "12 days, 5 hours". Chinese and Japanese use no separator ("{0}{1}").
+#: src/text.rs:52
+msgid "{0}, {1}"
+msgstr "{0}{1}"
+
+#: src/text.rs:60
+msgid "Malformed packet ({})"
+msgstr "パケットの形式が正しくありません（{}）"
+
+#: src/text.rs:62
+msgid "Unsupported SNMP version {}"
+msgstr "サポートされていない SNMP バージョン {}"
+
+#: src/text.rs:66
+msgid "Unexpected PDU type 0x{}"
+msgstr "予期しない PDU タイプ 0x{}"
+
+#: src/text.rs:74
+msgid "SNMP error {0} (varbind {1})"
+msgstr "SNMP エラー {0}（varbind {1}）"
+
+#: src/text.rs:78
+msgid "Connection timed out"
+msgstr "接続がタイムアウトしました"
+
+#: src/text.rs:80
+msgid "Unexpected response: {}"
+msgstr "予期しない応答：{}"
+
+#: src/text.rs:82
+msgid "Interface {} not found"
+msgstr "インターフェイス {} が見つかりません"
+
+#: src/text.rs:83
+msgid "Connection error: {}"
+msgstr "接続エラー：{}"
+
+#: src/text.rs:91
+msgid "Unknown user name"
+msgstr "ユーザ名が正しくありません"
+
+#: src/text.rs:92
+msgid "Wrong authentication password or protocol"
+msgstr "認証パスワードまたは認証プロトコルが正しくありません"
+
+#: src/text.rs:93
+msgid "Wrong privacy password or protocol"
+msgstr "暗号化パスワードまたは暗号化プロトコルが正しくありません"
+
+#: src/text.rs:95
+msgid "Security level does not match the device configuration"
+msgstr "セキュリティレベルがデバイスの設定と一致しません"
+
+#: src/text.rs:97
+msgid "Time synchronization with the device failed"
+msgstr "デバイスとの時刻同期に失敗しました"
+
+#: src/text.rs:98
+msgid "Device engine ID mismatch"
+msgstr "デバイスの engine ID が一致しません"
+
+#: src/text.rs:100
+msgid ""
+"The device did not answer the encrypted request. Check the privacy password "
+"and protocol."
+msgstr ""
+"デバイスが暗号化されたリクエストに応答しませんでした。暗号化パスワードとプロ"
+"トコルを確認してください。"
+
+#: src/text.rs:102
+msgid "SNMPv3 discovery has not completed"
+msgstr "SNMPv3 ディスカバリが完了していません"
+
+#: src/text.rs:104
+msgid "The authentication password must be at least {} characters"
+msgstr "認証パスワードは{}文字以上にしてください"
+
+#: src/text.rs:108
+msgid "The privacy password must be at least {} characters"
+msgstr "暗号化パスワードは{}文字以上にしてください"
+
+#: src/text.rs:111
+msgid "Invalid encryption parameters"
+msgstr "暗号化パラメータが無効です"
+
+#: src/text.rs:118
+msgid "Enter a community"
+msgstr "community を入力してください"
+
+#: src/text.rs:119
+msgid "Enter a user name"
+msgstr "ユーザ名を入力してください"
+
+#: src/text.rs:127
+msgid "Enter the device address"
+msgstr "デバイスのアドレスを入力してください"
+
+#: src/text.rs:128
+msgid "Enter a valid IPv4 or IPv6 address, or a host name"
+msgstr "有効な IPv4 / IPv6 アドレスまたはホスト名を入力してください"
+
+#: src/text.rs:129
+msgid "Port must be 1–65535"
+msgstr "Port は 1〜65535 で指定してください"
+
+#: src/text.rs:137
+msgid "SNMPv2c with a community only."
+msgstr "SNMPv2c（community のみ）。"
+
+#: src/text.rs:138
+msgid "SNMPv3 with authentication."
+msgstr "SNMPv3（認証のみ）。"
+
+#: src/text.rs:139
+msgid "SNMPv3 with authentication and encryption."
+msgstr "SNMPv3（認証と暗号化）。"
+
+#. Translators: {} is a number of seconds (1, 5 or 10).
+#: src/text.rs:146
+msgid "{} sec"
+msgstr "{}秒"
+
+#: src/text.rs:153
+msgid "Error · retry in {} s"
+msgstr "エラー · {}秒後に再試行"
+
+#: src/text.rs:162
+msgid "{} interface"
+msgid_plural "{} interfaces"
+msgstr[0] "{} 個のインターフェイス"
+
+#: src/tray.rs:60
+msgid "Hide Compact Window"
+msgstr "コンパクトウインドウを隠す"
+
+#: src/tray.rs:68
+msgid "About Anemobit"
+msgstr "Anemobit について"
+
+#: src/widgets/rate_gauge.rs:28
+msgid "Download"
+msgstr "ダウンロード"
+
+#: src/widgets/rate_gauge.rs:29
+msgid "Upload"
+msgstr "アップロード"
+
+#. Translators: {} is a rate such as "100.0 Mbps".
+#: src/widgets/rate_gauge.rs:227
+msgid "Max {}"
+msgstr "上限 {}"
+
+#: src/widgets/rate_gauge.rs:235
+msgid "No data"
+msgstr "データなし"
+
+#: src/widgets/status_pill.rs:68
+msgid "Connecting…"
+msgstr "接続中…"
+
+#: src/widgets/status_pill.rs:74
+msgid "Not Set"
+msgstr "未設定"
+
+#: src/widgets/traffic_chart.rs:260
+msgid "Waiting for data…"
+msgstr "データを待っています…"
+
+#: src/widgets/traffic_chart.rs:375
+msgid "Traffic over the last 5 minutes"
+msgstr "過去5分間のトラフィック"
+
+#. Translators: {} is a time of day such as "14:05:09".
+#: src/window.rs:217
+msgid "Updated {}"
+msgstr "{} に更新"

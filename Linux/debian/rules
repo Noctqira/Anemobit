@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# Meson + Cargo (meson calls cargo). Rust crates are downloaded from crates.io by cargo, so the build needs network access.
+
+export DH_VERBOSE = 1
+
+# debhelper replaces HOME with a temporary directory during the build: Rust installed with rustup needs the toolchain location given explicitly
+# (HOME here is still the user's original home directory); using Debian's cargo package isn't affected.
+ifneq ($(wildcard $(HOME)/.rustup),)
+export RUSTUP_HOME := $(HOME)/.rustup
+endif
+# Downloaded crates go inside debian/, not into the user's home directory.
+export CARGO_HOME := $(CURDIR)/debian/cargo-home
+
+%:
+	dh $@ --buildsystem=meson
+
+override_dh_auto_configure:
+	dh_auto_configure -- -Dprofile=default

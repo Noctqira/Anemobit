@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.22"/>
+  <requires lib="libadwaita" version="1.9"/>
+  <template class="AnemobitPopup" parent="AdwWindow">
+    <property name="title">Anemobit</property>
+    <property name="default-width">360</property>
+    <property name="resizable">False</property>
+    <property name="content">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <style>
+          <class name="anemobit-background"/>
+          <class name="anemobit-popup"/>
+        </style>
+        <child>
+          <object class="GtkBox" id="not_configured">
+            <property name="orientation">vertical</property>
+            <property name="spacing">10</property>
+            <style>
+              <class name="anemobit-card"/>
+            </style>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Device Not Configured</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="heading"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Enter the device address and SNMP account, then choose the interface to monitor.</property>
+                <property name="wrap">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Open Settings</property>
+                <property name="halign">start</property>
+                <property name="action-name">app.preferences</property>
+                <style>
+                  <class name="suggested-action"/>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="configured">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">8</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="hexpand">True</property>
+                    <child>
+                      <object class="GtkLabel" id="interface_label">
+                        <property name="xalign">0</property>
+                        <property name="ellipsize">end</property>
+                        <style>
+                          <class name="heading"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="host_label">
+                        <property name="xalign">0</property>
+                        <property name="ellipsize">end</property>
+                        <style>
+                          <class name="caption"/>
+                          <class name="dim-label"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AnemobitStatusPill" id="status_pill"/>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">10</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">2</property>
+                    <style>
+                      <class name="anemobit-card"/>
+                      <class name="anemobit-rate-tile"/>
+                    </style>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">4</property>
+                        <style>
+                          <class name="caption-heading"/>
+                          <class name="anemobit-download"/>
+                        </style>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">anemobit-arrow-down-symbolic</property>
+                            <property name="pixel-size">12</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="download_title"/>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">4</property>
+                        <child>
+                          <object class="GtkLabel" id="download_value">
+                            <property name="width-chars">5</property>
+                            <property name="xalign">1</property>
+                            <style>
+                              <class name="anemobit-tile-value"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="download_unit">
+                            <property name="width-chars">4</property>
+                            <property name="xalign">0</property>
+                            <property name="valign">baseline-fill</property>
+                            <style>
+                              <class name="caption"/>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">2</property>
+                    <style>
+                      <class name="anemobit-card"/>
+                      <class name="anemobit-rate-tile"/>
+                    </style>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">4</property>
+                        <style>
+                          <class name="caption-heading"/>
+                          <class name="anemobit-upload"/>
+                        </style>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">anemobit-arrow-up-symbolic</property>
+                            <property name="pixel-size">12</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="upload_title"/>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">4</property>
+                        <child>
+                          <object class="GtkLabel" id="upload_value">
+                            <property name="width-chars">5</property>
+                            <property name="xalign">1</property>
+                            <style>
+                              <class name="anemobit-tile-value"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="upload_unit">
+                            <property name="width-chars">4</property>
+                            <property name="xalign">0</property>
+                            <property name="valign">baseline-fill</property>
+                            <style>
+                              <class name="caption"/>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AnemobitTrafficChart" id="chart">
+                <property name="compact">True</property>
+                <property name="height-request">120</property>
+                <style>
+                  <class name="anemobit-card"/>
+                  <class name="anemobit-chart-card"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="detail_label">
+                <property name="xalign">0</property>
+                <property name="wrap">True</property>
+                <property name="lines">2</property>
+                <property name="ellipsize">end</property>
+                <style>
+                  <class name="caption"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="spacing">6</property>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Open Main Window</property>
+                <property name="action-name">app.show-window</property>
+                <style>
+                  <class name="pill"/>
+                  <class name="small"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Settings…</property>
+                <property name="action-name">app.preferences</property>
+                <property name="hexpand">True</property>
+                <property name="halign">start</property>
+                <style>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Quit</property>
+                <property name="action-name">app.quit</property>
+                <style>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

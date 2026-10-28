@@ -1,0 +1,593 @@
+# Korean translation for Anemobit.
+# Copyright © 2026 Noctqira
+# This file is distributed under the same license as the anemobit package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: anemobit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-23 13:42+0800\n"
+"PO-Revision-Date: 2026-10-12 00:00+0800\n"
+"Last-Translator: Noctqira\n"
+"Language-Team: Noctqira\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:2
+msgid "Anemobit"
+msgstr ""
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:3
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:7
+msgid "Real-time interface traffic of devices over SNMP"
+msgstr "SNMP로 장치의 인터페이스 트래픽을 실시간으로 모니터링합니다"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon!
+#: data/io.github.noctqira.Anemobit.desktop.in.in:10
+msgid "SNMP;traffic;bandwidth;network;"
+msgstr "SNMP;traffic;bandwidth;network;트래픽;대역폭;네트워크;"
+
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:9 src/about.rs:15
+msgid ""
+"Works with devices that provide the standard IF-MIB with 64-bit interface "
+"counters over SNMPv2c or SNMPv3 (authentication: MD5, SHA1, SHA224, SHA256, "
+"SHA384, SHA512; privacy: DES, AES-128)."
+msgstr ""
+"SNMPv2c 또는 SNMPv3(인증: MD5, SHA1, SHA224, SHA256, SHA384, SHA512, 암호화: "
+"DES, AES-128)를 통해 표준 IF-MIB와 64비트 인터페이스 카운터를 제공하는 장치"
+"를 지원합니다."
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:43
+msgid "Whether the hint about a missing system tray was shown"
+msgstr "시스템 트레이가 없다는 안내를 표시했는지 여부"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:50
+msgid "Device address (IPv4, IPv6 or host name)"
+msgstr "장치 주소(IPv4, IPv6 또는 호스트 이름)"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:57
+msgid "Monitored interfaces (ifName), in display order"
+msgstr "모니터링할 인터페이스(ifName, 표시 순서)"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:77
+msgid "Refresh interval in seconds (1, 5 or 10)"
+msgstr "새로 고침 간격(초, 1, 5 또는 10)"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:84
+msgid "Interface shown in the system tray and the compact window"
+msgstr "시스템 트레이와 소형 창에 표시할 인터페이스"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:91
+msgid ""
+"Show charts on interface cards when two or more interfaces are monitored"
+msgstr "인터페이스를 두 개 이상 모니터링할 때 인터페이스 카드에 차트 표시"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:95
+msgid "Download color as #RRGGBB; empty for the theme default"
+msgstr "다운로드 색상(#RRGGBB). 비어 있으면 테마 기본 색상"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:99
+msgid "Upload color as #RRGGBB; empty for the theme default"
+msgstr "업로드 색상(#RRGGBB). 비어 있으면 테마 기본 색상"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:104
+msgid "Background opacity of the main window (0–1)"
+msgstr "메인 윈도우 배경 불투명도(0–1)"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:109
+msgid "Background opacity of the window opened from the system tray (0–1)"
+msgstr "시스템 트레이에서 여는 창의 배경 불투명도(0–1)"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:113
+msgid ""
+"Display language (en, zh_TW, ja or ko); empty to follow the system. Takes "
+"effect after a restart"
+msgstr "표시 언어(en, zh_TW, ja, ko). 비어 있으면 시스템 설정을 따름. 다시 시작하면 적용됨"
+
+#: data/resources/ui/interface-card.ui:112
+msgid "Current"
+msgstr "현재"
+
+#: data/resources/ui/interface-card.ui:125
+msgid "5-min Average"
+msgstr "5분 평균"
+
+#: data/resources/ui/interface-card.ui:138
+msgid "5-min Peak"
+msgstr "5분 최고"
+
+#: data/resources/ui/interface-card.ui:204
+msgid "Last 5 Minutes"
+msgstr "최근 5분"
+
+#: data/resources/ui/popup.ui:26 data/resources/ui/window.ui:76
+msgid "Device Not Configured"
+msgstr "장치가 설정되지 않음"
+
+#: data/resources/ui/popup.ui:35 data/resources/ui/window.ui:87
+msgid ""
+"Enter the device address and SNMP account, then choose the interface to "
+"monitor."
+msgstr "장치 주소와 SNMP 계정을 입력한 후 모니터링할 인터페이스를 선택하세요."
+
+#: data/resources/ui/popup.ui:45 data/resources/ui/window.ui:98
+msgid "Open Settings"
+msgstr "설정 열기"
+
+#: data/resources/ui/popup.ui:233 src/tray.rs:49
+msgid "Open Main Window"
+msgstr "메인 윈도우 열기"
+
+#: data/resources/ui/popup.ui:243 src/tray.rs:54
+msgid "Settings…"
+msgstr "설정…"
+
+#: data/resources/ui/popup.ui:254 src/tray.rs:74
+msgid "Quit"
+msgstr "종료"
+
+#: data/resources/ui/settings-dialog.ui:6 data/resources/ui/window.ui:32
+msgid "Settings"
+msgstr "설정"
+
+#: data/resources/ui/settings-dialog.ui:19
+msgid "Device"
+msgstr "장치"
+
+#: data/resources/ui/settings-dialog.ui:22
+msgid "Address"
+msgstr "주소"
+
+#: data/resources/ui/settings-dialog.ui:28
+msgid "Port"
+msgstr "Port"
+
+#: data/resources/ui/settings-dialog.ui:37
+msgid "SNMP Security"
+msgstr "SNMP 보안"
+
+#: data/resources/ui/settings-dialog.ui:40
+msgid "Security"
+msgstr "보안 모드"
+
+#: data/resources/ui/settings-dialog.ui:71
+msgid "Community"
+msgstr "Community"
+
+#: data/resources/ui/settings-dialog.ui:76
+msgid "User Name (Community)"
+msgstr "사용자 이름(Community)"
+
+#: data/resources/ui/settings-dialog.ui:81
+msgid "Authentication"
+msgstr "인증 프로토콜"
+
+#: data/resources/ui/settings-dialog.ui:86
+msgid "Authentication Password"
+msgstr "인증 비밀번호"
+
+#: data/resources/ui/settings-dialog.ui:91
+msgid "Privacy"
+msgstr "암호화 프로토콜"
+
+#: data/resources/ui/settings-dialog.ui:116
+msgid "Privacy Password"
+msgstr "암호화 비밀번호"
+
+#: data/resources/ui/settings-dialog.ui:135
+msgid "Interfaces"
+msgstr "인터페이스"
+
+#: data/resources/ui/settings-dialog.ui:136
+msgid ""
+"Select one or more interfaces to monitor. Each gets its own card on the "
+"dashboard."
+msgstr ""
+"모니터링할 인터페이스를 하나 이상 선택하세요. 인터페이스마다 대시보드에 카드"
+"가 표시됩니다."
+
+#: data/resources/ui/settings-dialog.ui:139
+msgid "Scan to list the device's interfaces."
+msgstr "'인터페이스 검색'을 눌러 장치의 인터페이스를 표시합니다."
+
+#: data/resources/ui/settings-dialog.ui:147
+msgid "System Tray Interface"
+msgstr "시스템 트레이에 표시할 인터페이스"
+
+#: data/resources/ui/settings-dialog.ui:152
+msgid "Scan Interfaces"
+msgstr "인터페이스 검색"
+
+#: data/resources/ui/settings-dialog.ui:158
+msgid "Test Connection"
+msgstr "연결 테스트"
+
+#: data/resources/ui/settings-dialog.ui:167
+msgid "Display"
+msgstr "표시"
+
+#: data/resources/ui/settings-dialog.ui:168
+msgid ""
+"When off, interface cards show only gauges and statistics while two or more "
+"interfaces are monitored."
+msgstr ""
+"끄면 두 개 이상의 인터페이스를 모니터링할 때 카드에 게이지와 통계만 표시됩니"
+"다."
+
+#: data/resources/ui/settings-dialog.ui:171
+msgid "Refresh Rate"
+msgstr "새로 고침 간격"
+
+#: data/resources/ui/settings-dialog.ui:199
+msgid "Rate Unit"
+msgstr "속도 단위"
+
+#: data/resources/ui/settings-dialog.ui:209
+msgid "Bits (Mbps)"
+msgstr "비트(Mbps)"
+
+#: data/resources/ui/settings-dialog.ui:215
+msgid "Bytes (MB/s)"
+msgstr "바이트(MB/s)"
+
+#: data/resources/ui/settings-dialog.ui:224
+msgid "Show Charts for Multiple Interfaces"
+msgstr "여러 인터페이스에서도 차트 표시"
+
+#: data/resources/ui/settings-dialog.ui:229
+msgid "Main Window Background Opacity"
+msgstr "메인 윈도우 배경 불투명도"
+
+#: data/resources/ui/settings-dialog.ui:251
+msgid "Tray Window Background Opacity"
+msgstr "트레이 창 배경 불투명도"
+
+#: data/resources/ui/settings-dialog.ui:273 src/tray.rs:62
+msgid "Show Compact Window"
+msgstr "소형 창 표시"
+
+#: data/resources/ui/settings-dialog.ui:274
+msgid "A small window with the rates, for desktops without a system tray."
+msgstr ""
+"속도만 표시하는 작은 창입니다. 시스템 트레이가 없는 데스크톱에 적합합니다."
+
+#: data/resources/ui/settings-dialog.ui:282
+msgid "Language"
+msgstr "언어"
+
+#: data/resources/ui/settings-dialog.ui:283
+msgid "Takes effect after Anemobit restarts."
+msgstr "Anemobit를 다시 시작하면 적용됩니다."
+
+#: data/resources/ui/settings-dialog.ui:286
+msgid "Display Language"
+msgstr "표시 언어"
+
+#: data/resources/ui/settings-dialog.ui:291
+msgid "Restart Now"
+msgstr "지금 다시 시작"
+
+#: data/resources/ui/settings-dialog.ui:312
+msgid "Colors"
+msgstr "색상"
+
+#: data/resources/ui/settings-dialog.ui:317
+#: data/resources/ui/settings-dialog.ui:340
+msgid "Reset"
+msgstr "기본값으로 재설정"
+
+#: data/resources/ui/settings-dialog.ui:364
+msgid "Startup"
+msgstr "시작"
+
+#: data/resources/ui/settings-dialog.ui:365
+msgid "Takes effect immediately."
+msgstr "즉시 적용됩니다."
+
+#: data/resources/ui/settings-dialog.ui:368
+msgid "Open at Login"
+msgstr "로그인 시 열기"
+
+#: data/resources/ui/settings-dialog.ui:411
+msgid "Save"
+msgstr "저장"
+
+#: data/resources/ui/window.ui:26
+msgid "Main Menu"
+msgstr "기본 메뉴"
+
+#: data/resources/ui/window.ui:154
+msgid "_About Anemobit"
+msgstr "Anemobit 정보(_A)"
+
+#: data/resources/ui/window.ui:158
+msgid "_Quit"
+msgstr "종료(_Q)"
+
+#: src/about.rs:13
+msgid "Real-time interface traffic of devices over SNMP."
+msgstr "SNMP로 장치의 인터페이스 트래픽을 실시간으로 모니터링합니다."
+
+#: src/about.rs:28
+msgid "Privacy Policy"
+msgstr "개인정보 처리방침"
+
+#: src/application.rs:397
+msgid "System Tray Not Available"
+msgstr "시스템 트레이를 사용할 수 없음"
+
+#: src/application.rs:399
+msgid ""
+"To show the rate in the top bar, install and enable the AppIndicator "
+"extension. You can also turn on the compact window in Settings."
+msgstr ""
+"상단 표시줄에 속도를 표시하려면 AppIndicator 확장을 설치하고 활성화하세요. 설"
+"정에서 소형 창을 켤 수도 있습니다."
+
+#: src/application.rs:402
+msgid "OK"
+msgstr "확인"
+
+#: src/compact_window.rs:44 src/traffic_model.rs:182
+msgid "Anemobit: Not Set"
+msgstr "Anemobit: 설정 안 됨"
+
+#: src/popup.rs:194 src/window.rs:211
+msgid "Device up {}"
+msgstr "장치 가동 시간 {}"
+
+#: src/settings_dialog.rs:219
+msgid "Follow System"
+msgstr "시스템 설정 따르기"
+
+#: src/settings_dialog.rs:645
+msgid "Changes take effect when you save."
+msgstr "설정은 저장 후 적용됩니다."
+
+#: src/settings_dialog.rs:698
+msgid "Scanning interfaces…"
+msgstr "인터페이스 검색 중…"
+
+#: src/settings_dialog.rs:709
+msgid "No interfaces found"
+msgstr "인터페이스를 찾을 수 없습니다"
+
+#. Translators: {} is the number of interfaces.
+#: src/settings_dialog.rs:712
+msgid "Interfaces found: {}"
+msgstr "인터페이스 {}개를 찾았습니다"
+
+#: src/settings_dialog.rs:725
+msgid "Testing connection…"
+msgstr "연결 테스트 중…"
+
+#: src/settings_dialog.rs:727
+msgid "Connected."
+msgstr "연결되었습니다."
+
+#. Translators: {} is an uptime such as "12 days, 5 hours".
+#: src/settings_dialog.rs:731
+msgid "Device up {}."
+msgstr "장치 가동 시간 {}."
+
+#: src/settings_dialog.rs:766
+msgid "Saved"
+msgstr "저장됨"
+
+#: src/settings_dialog.rs:770
+msgid "Could not save the community or passwords to the keyring"
+msgstr "community 또는 비밀번호를 키링에 저장할 수 없습니다"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:801
+msgid "Could not save the language setting: {}"
+msgstr "언어 설정을 저장할 수 없습니다: {}"
+
+#: src/settings_dialog.rs:825
+msgid "Could not restart Anemobit: {}"
+msgstr "Anemobit를 다시 시작할 수 없습니다: {}"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:844
+msgid "Could not change the startup setting: {}"
+msgstr "시작 설정을 변경할 수 없습니다: {}"
+
+#. Translators: {0} is an interface name, {1} its index.
+#: src/text.rs:33
+msgid "{0} is ifIndex {1}."
+msgstr "{0}의 ifIndex는 {1}입니다."
+
+#: src/text.rs:43
+msgid "{} day"
+msgid_plural "{} days"
+msgstr[0] "{}일"
+
+#: src/text.rs:44
+msgid "{} hour"
+msgid_plural "{} hours"
+msgstr[0] "{}시간"
+
+#: src/text.rs:45
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{}분"
+
+#. Translators: two uptime units, as in "12 days, 5 hours". Chinese and Japanese use no separator ("{0}{1}").
+#: src/text.rs:52
+msgid "{0}, {1}"
+msgstr "{0} {1}"
+
+#: src/text.rs:60
+msgid "Malformed packet ({})"
+msgstr "패킷 형식이 잘못되었습니다({})"
+
+#: src/text.rs:62
+msgid "Unsupported SNMP version {}"
+msgstr "지원되지 않는 SNMP 버전 {}"
+
+#: src/text.rs:66
+msgid "Unexpected PDU type 0x{}"
+msgstr "예기치 않은 PDU 유형 0x{}"
+
+#: src/text.rs:74
+msgid "SNMP error {0} (varbind {1})"
+msgstr "SNMP 오류 {0}(varbind {1})"
+
+#: src/text.rs:78
+msgid "Connection timed out"
+msgstr "연결 시간이 초과되었습니다"
+
+#: src/text.rs:80
+msgid "Unexpected response: {}"
+msgstr "예기치 않은 응답: {}"
+
+#: src/text.rs:82
+msgid "Interface {} not found"
+msgstr "인터페이스 {}을(를) 찾을 수 없습니다"
+
+#: src/text.rs:83
+msgid "Connection error: {}"
+msgstr "연결 오류: {}"
+
+#: src/text.rs:91
+msgid "Unknown user name"
+msgstr "사용자 이름이 올바르지 않습니다"
+
+#: src/text.rs:92
+msgid "Wrong authentication password or protocol"
+msgstr "인증 비밀번호 또는 인증 프로토콜이 올바르지 않습니다"
+
+#: src/text.rs:93
+msgid "Wrong privacy password or protocol"
+msgstr "암호화 비밀번호 또는 암호화 프로토콜이 올바르지 않습니다"
+
+#: src/text.rs:95
+msgid "Security level does not match the device configuration"
+msgstr "보안 수준이 장치 설정과 일치하지 않습니다"
+
+#: src/text.rs:97
+msgid "Time synchronization with the device failed"
+msgstr "장치와의 시간 동기화에 실패했습니다"
+
+#: src/text.rs:98
+msgid "Device engine ID mismatch"
+msgstr "장치 engine ID가 일치하지 않습니다"
+
+#: src/text.rs:100
+msgid ""
+"The device did not answer the encrypted request. Check the privacy password "
+"and protocol."
+msgstr ""
+"장치가 암호화된 요청에 응답하지 않았습니다. 암호화 비밀번호와 프로토콜을 확인"
+"하세요."
+
+#: src/text.rs:102
+msgid "SNMPv3 discovery has not completed"
+msgstr "SNMPv3 검색이 완료되지 않았습니다"
+
+#: src/text.rs:104
+msgid "The authentication password must be at least {} characters"
+msgstr "인증 비밀번호는 {}자 이상이어야 합니다"
+
+#: src/text.rs:108
+msgid "The privacy password must be at least {} characters"
+msgstr "암호화 비밀번호는 {}자 이상이어야 합니다"
+
+#: src/text.rs:111
+msgid "Invalid encryption parameters"
+msgstr "암호화 매개변수가 잘못되었습니다"
+
+#: src/text.rs:118
+msgid "Enter a community"
+msgstr "community를 입력하세요"
+
+#: src/text.rs:119
+msgid "Enter a user name"
+msgstr "사용자 이름을 입력하세요"
+
+#: src/text.rs:127
+msgid "Enter the device address"
+msgstr "장치 주소를 입력하세요"
+
+#: src/text.rs:128
+msgid "Enter a valid IPv4 or IPv6 address, or a host name"
+msgstr "유효한 IPv4 또는 IPv6 주소나 호스트 이름을 입력하세요"
+
+#: src/text.rs:129
+msgid "Port must be 1–65535"
+msgstr "Port는 1–65535 사이여야 합니다"
+
+#: src/text.rs:137
+msgid "SNMPv2c with a community only."
+msgstr "SNMPv2c(community만 사용)."
+
+#: src/text.rs:138
+msgid "SNMPv3 with authentication."
+msgstr "SNMPv3(인증만)."
+
+#: src/text.rs:139
+msgid "SNMPv3 with authentication and encryption."
+msgstr "SNMPv3(인증 및 암호화)."
+
+#. Translators: {} is a number of seconds (1, 5 or 10).
+#: src/text.rs:146
+msgid "{} sec"
+msgstr "{}초"
+
+#: src/text.rs:153
+msgid "Error · retry in {} s"
+msgstr "오류 · {}초 후 재시도"
+
+#: src/text.rs:162
+msgid "{} interface"
+msgid_plural "{} interfaces"
+msgstr[0] "인터페이스 {}개"
+
+#: src/tray.rs:60
+msgid "Hide Compact Window"
+msgstr "소형 창 숨기기"
+
+#: src/tray.rs:68
+msgid "About Anemobit"
+msgstr "Anemobit 정보"
+
+#: src/widgets/rate_gauge.rs:28
+msgid "Download"
+msgstr "다운로드"
+
+#: src/widgets/rate_gauge.rs:29
+msgid "Upload"
+msgstr "업로드"
+
+#. Translators: {} is a rate such as "100.0 Mbps".
+#: src/widgets/rate_gauge.rs:227
+msgid "Max {}"
+msgstr "최대 {}"
+
+#: src/widgets/rate_gauge.rs:235
+msgid "No data"
+msgstr "데이터 없음"
+
+#: src/widgets/status_pill.rs:68
+msgid "Connecting…"
+msgstr "연결 중…"
+
+#: src/widgets/status_pill.rs:74
+msgid "Not Set"
+msgstr "설정 안 됨"
+
+#: src/widgets/traffic_chart.rs:260
+msgid "Waiting for data…"
+msgstr "데이터를 기다리는 중…"
+
+#: src/widgets/traffic_chart.rs:375
+msgid "Traffic over the last 5 minutes"
+msgstr "최근 5분 트래픽"
+
+#. Translators: {} is a time of day such as "14:05:09".
+#: src/window.rs:217
+msgid "Updated {}"
+msgstr "{} 업데이트됨"

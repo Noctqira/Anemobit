@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/noctqira/Anemobit/">
+    <file compressed="true">ui/window.ui</file>
+    <file compressed="true">ui/rate-gauge.ui</file>
+    <file compressed="true">ui/interface-card.ui</file>
+    <file compressed="true">ui/settings-dialog.ui</file>
+    <file compressed="true">ui/popup.ui</file>
+    <file compressed="true">style.css</file>
+    <file compressed="true">icons/scalable/actions/anemobit-arrow-down-symbolic.svg</file>
+    <file compressed="true">icons/scalable/actions/anemobit-arrow-up-symbolic.svg</file>
+  </gresource>
+</gresources>

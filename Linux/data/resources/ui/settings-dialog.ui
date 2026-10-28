@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.22"/>
+  <requires lib="libadwaita" version="1.9"/>
+  <template class="AnemobitSettingsDialog" parent="AdwDialog">
+    <property name="title" translatable="yes">Settings</property>
+    <property name="content-width">560</property>
+    <property name="content-height">760</property>
+    <property name="child">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar"/>
+        </child>
+        <property name="content">
+          <object class="AdwPreferencesPage">
+            <!-- Device -->
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Device</property>
+                <child>
+                  <object class="AdwEntryRow" id="host_row">
+                    <property name="title" translatable="yes">Address</property>
+                    <property name="input-purpose">url</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwEntryRow" id="port_row">
+                    <property name="title" translatable="yes">Port</property>
+                    <property name="input-purpose">digits</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- SNMP security -->
+            <child>
+              <object class="AdwPreferencesGroup" id="security_group">
+                <property name="title" translatable="yes">SNMP Security</property>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="yes">Security</property>
+                    <child type="suffix">
+                      <object class="AdwToggleGroup" id="mode_group">
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="anemobit-segmented"/>
+                        </style>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">none</property>
+                            <property name="label">None</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">authorized</property>
+                            <property name="label">Auth</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">private</property>
+                            <property name="label">Priv</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPasswordEntryRow" id="community_row">
+                    <property name="title" translatable="yes">Community</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwEntryRow" id="user_row">
+                    <property name="title" translatable="yes">User Name (Community)</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwComboRow" id="auth_protocol_row">
+                    <property name="title" translatable="yes">Authentication</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPasswordEntryRow" id="auth_password_row">
+                    <property name="title" translatable="yes">Authentication Password</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="privacy_row">
+                    <property name="title" translatable="yes">Privacy</property>
+                    <child type="suffix">
+                      <object class="AdwToggleGroup" id="privacy_group">
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="anemobit-segmented"/>
+                        </style>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">des</property>
+                            <property name="label">DES</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">aes</property>
+                            <property name="label">AES</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPasswordEntryRow" id="priv_password_row">
+                    <property name="title" translatable="yes">Privacy Password</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="problem_label">
+                    <property name="xalign">0</property>
+                    <property name="wrap">True</property>
+                    <property name="margin-top">8</property>
+                    <style>
+                      <class name="caption"/>
+                      <class name="warning"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- Interfaces -->
+            <child>
+              <object class="AdwPreferencesGroup" id="interfaces_group">
+                <property name="title" translatable="yes">Interfaces</property>
+                <property name="description" translatable="yes">Select one or more interfaces to monitor. Each gets its own card on the dashboard.</property>
+                <child>
+                  <object class="AdwActionRow" id="no_interfaces_row">
+                    <property name="title" translatable="yes">Scan to list the device's interfaces.</property>
+                    <style>
+                      <class name="dim-label"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwComboRow" id="tray_row">
+                    <property name="title" translatable="yes">System Tray Interface</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwButtonRow" id="scan_button">
+                    <property name="title" translatable="yes">Scan Interfaces</property>
+                    <property name="start-icon-name">view-refresh-symbolic</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwButtonRow" id="test_button">
+                    <property name="title" translatable="yes">Test Connection</property>
+                    <property name="start-icon-name">network-transmit-receive-symbolic</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- Display -->
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Display</property>
+                <property name="description" translatable="yes">When off, interface cards show only gauges and statistics while two or more interfaces are monitored.</property>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="yes">Refresh Rate</property>
+                    <child type="suffix">
+                      <object class="AdwToggleGroup" id="interval_group">
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="anemobit-segmented"/>
+                        </style>
+                        <child>
+                          <object class="AdwToggle" id="interval_1">
+                            <property name="name">1</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle" id="interval_5">
+                            <property name="name">5</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle" id="interval_10">
+                            <property name="name">10</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="yes">Rate Unit</property>
+                    <child type="suffix">
+                      <object class="AdwToggleGroup" id="unit_group">
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="anemobit-segmented"/>
+                        </style>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">bits</property>
+                            <property name="label" translatable="yes">Bits (Mbps)</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwToggle">
+                            <property name="name">bytes</property>
+                            <property name="label" translatable="yes">Bytes (MB/s)</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSwitchRow" id="charts_row">
+                    <property name="title" translatable="yes">Show Charts for Multiple Interfaces</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="yes">Main Window Background Opacity</property>
+                    <child type="suffix">
+                      <object class="GtkScale" id="main_opacity_scale">
+                        <property name="width-request">180</property>
+                        <property name="valign">center</property>
+                        <property name="draw-value">True</property>
+                        <property name="value-pos">left</property>
+                        <property name="digits">0</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">100</property>
+                            <property name="step-increment">5</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="yes">Tray Window Background Opacity</property>
+                    <child type="suffix">
+                      <object class="GtkScale" id="tray_opacity_scale">
+                        <property name="width-request">180</property>
+                        <property name="valign">center</property>
+                        <property name="draw-value">True</property>
+                        <property name="value-pos">left</property>
+                        <property name="digits">0</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">100</property>
+                            <property name="step-increment">5</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSwitchRow" id="compact_row">
+                    <property name="title" translatable="yes">Show Compact Window</property>
+                    <property name="subtitle" translatable="yes">A small window with the rates, for desktops without a system tray.</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- Language -->
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Language</property>
+                <property name="description" translatable="yes">Takes effect after Anemobit restarts.</property>
+                <child>
+                  <object class="AdwComboRow" id="language_row">
+                    <property name="title" translatable="yes">Display Language</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwButtonRow" id="restart_button">
+                    <property name="title" translatable="yes">Restart Now</property>
+                    <property name="visible">False</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="language_error">
+                    <property name="xalign">0</property>
+                    <property name="wrap">True</property>
+                    <property name="margin-top">8</property>
+                    <property name="visible">False</property>
+                    <style>
+                      <class name="caption"/>
+                      <class name="error"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- Colors -->
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Colors</property>
+                <child>
+                  <object class="AdwActionRow" id="download_color_row">
+                    <child type="suffix">
+                      <object class="GtkButton" id="download_reset">
+                        <property name="label" translatable="yes">Reset</property>
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="flat"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child type="suffix">
+                      <object class="GtkColorDialogButton" id="download_color">
+                        <property name="valign">center</property>
+                        <property name="dialog">
+                          <object class="GtkColorDialog">
+                            <property name="with-alpha">False</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="upload_color_row">
+                    <child type="suffix">
+                      <object class="GtkButton" id="upload_reset">
+                        <property name="label" translatable="yes">Reset</property>
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="flat"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child type="suffix">
+                      <object class="GtkColorDialogButton" id="upload_color">
+                        <property name="valign">center</property>
+                        <property name="dialog">
+                          <object class="GtkColorDialog">
+                            <property name="with-alpha">False</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <!-- Startup -->
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Startup</property>
+                <property name="description" translatable="yes">Takes effect immediately.</property>
+                <child>
+                  <object class="AdwSwitchRow" id="autostart_row">
+                    <property name="title" translatable="yes">Open at Login</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="autostart_error">
+                    <property name="xalign">0</property>
+                    <property name="wrap">True</property>
+                    <property name="margin-top">8</property>
+                    <property name="visible">False</property>
+                    <style>
+                      <class name="caption"/>
+                      <class name="error"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="bottom">
+          <object class="GtkBox">
+            <property name="spacing">12</property>
+            <property name="margin-start">18</property>
+            <property name="margin-end">12</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">10</property>
+            <child>
+              <object class="AdwSpinner" id="spinner">
+                <property name="visible">False</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="activity_label">
+                <property name="xalign">0</property>
+                <property name="hexpand">True</property>
+                <property name="wrap">True</property>
+                <style>
+                  <class name="caption"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="save_button">
+                <property name="label" translatable="yes">Save</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

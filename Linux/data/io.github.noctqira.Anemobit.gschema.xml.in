@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="@gettext-package@">
+  <!-- Security mode keeps RouterOS /snmp community security names (same as the other platforms' settings files). -->
+  <enum id="@app-id@.SecurityMode">
+    <value nick="none" value="0"/>
+    <value nick="authorized" value="1"/>
+    <value nick="private" value="2"/>
+  </enum>
+  <enum id="@app-id@.AuthProtocol">
+    <value nick="md5" value="0"/>
+    <value nick="sha1" value="1"/>
+    <value nick="sha224" value="2"/>
+    <value nick="sha256" value="3"/>
+    <value nick="sha384" value="4"/>
+    <value nick="sha512" value="5"/>
+  </enum>
+  <enum id="@app-id@.PrivProtocol">
+    <value nick="des" value="0"/>
+    <value nick="aes" value="1"/>
+  </enum>
+  <enum id="@app-id@.UnitStyle">
+    <value nick="bits" value="0"/>
+    <value nick="bytes" value="1"/>
+  </enum>
+
+  <schema id="@app-id@" path="@settings-path@">
+    <child name="device" schema="@app-id@.device"/>
+    <child name="snmp" schema="@app-id@.snmp"/>
+    <child name="poll" schema="@app-id@.poll"/>
+    <child name="display" schema="@app-id@.display"/>
+    <child name="compact-window" schema="@app-id@.compact-window"/>
+    <key name="window-width" type="i">
+      <default>760</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>680</default>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="tray-hint-shown" type="b">
+      <default>false</default>
+      <summary>Whether the hint about a missing system tray was shown</summary>
+    </key>
+  </schema>
+
+  <schema id="@app-id@.device" path="@settings-path@device/">
+    <key name="host" type="s">
+      <default>''</default>
+      <summary>Device address (IPv4, IPv6 or host name)</summary>
+    </key>
+    <key name="port" type="q">
+      <default>161</default>
+    </key>
+    <key name="interface-names" type="as">
+      <default>[]</default>
+      <summary>Monitored interfaces (ifName), in display order</summary>
+    </key>
+  </schema>
+
+  <schema id="@app-id@.snmp" path="@settings-path@snmp/">
+    <key name="security-mode" enum="@app-id@.SecurityMode">
+      <default>'none'</default>
+    </key>
+    <key name="auth-protocol" enum="@app-id@.AuthProtocol">
+      <default>'sha1'</default>
+    </key>
+    <key name="priv-protocol" enum="@app-id@.PrivProtocol">
+      <default>'aes'</default>
+    </key>
+  </schema>
+
+  <schema id="@app-id@.poll" path="@settings-path@poll/">
+    <key name="interval" type="u">
+      <range min="1" max="10"/>
+      <default>1</default>
+      <summary>Refresh interval in seconds (1, 5 or 10)</summary>
+    </key>
+  </schema>
+
+  <schema id="@app-id@.display" path="@settings-path@display/">
+    <key name="tray-interface" type="s">
+      <default>''</default>
+      <summary>Interface shown in the system tray and the compact window</summary>
+    </key>
+    <key name="unit-style" enum="@app-id@.UnitStyle">
+      <default>'bits'</default>
+    </key>
+    <key name="charts-when-multiple" type="b">
+      <default>false</default>
+      <summary>Show charts on interface cards when two or more interfaces are monitored</summary>
+    </key>
+    <key name="download-color" type="s">
+      <default>''</default>
+      <summary>Download color as #RRGGBB; empty for the theme default</summary>
+    </key>
+    <key name="upload-color" type="s">
+      <default>''</default>
+      <summary>Upload color as #RRGGBB; empty for the theme default</summary>
+    </key>
+    <key name="main-window-opacity" type="d">
+      <range min="0" max="1"/>
+      <default>0.7</default>
+      <summary>Background opacity of the main window (0–1)</summary>
+    </key>
+    <key name="tray-window-opacity" type="d">
+      <range min="0" max="1"/>
+      <default>0.7</default>
+      <summary>Background opacity of the window opened from the system tray (0–1)</summary>
+    </key>
+    <key name="language" type="s">
+      <default>''</default>
+      <summary>Display language (en, zh_TW, ja or ko); empty to follow the system. Takes effect after a restart</summary>
+    </key>
+  </schema>
+
+  <schema id="@app-id@.compact-window" path="@settings-path@compact-window/">
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+</schemalist>

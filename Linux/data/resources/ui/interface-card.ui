@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.22"/>
+  <requires lib="libadwaita" version="1.9"/>
+  <template class="AnemobitInterfaceCard" parent="GtkBox">
+    <property name="orientation">vertical</property>
+    <property name="spacing">16</property>
+    <style>
+      <class name="anemobit-card"/>
+      <class name="anemobit-interface-card"/>
+    </style>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">network-wired-symbolic</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="name_label">
+            <property name="xalign">0</property>
+            <property name="ellipsize">end</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="body">
+        <property name="spacing">24</property>
+        <child>
+          <object class="GtkBox" id="gauges">
+            <property name="spacing">16</property>
+            <property name="homogeneous">True</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="AnemobitRateGauge" id="download_gauge">
+                <property name="direction">download</property>
+              </object>
+            </child>
+            <child>
+              <object class="AnemobitRateGauge" id="upload_gauge">
+                <property name="direction">upload</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkGrid" id="stats">
+            <property name="column-spacing">12</property>
+            <property name="row-spacing">8</property>
+            <property name="valign">center</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkBox" id="stats_download_header">
+                <property name="spacing">4</property>
+                <style>
+                  <class name="caption-heading"/>
+                  <class name="anemobit-download"/>
+                </style>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">anemobit-arrow-down-symbolic</property>
+                    <property name="pixel-size">12</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="stats_download_title"/>
+                </child>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">4</property>
+                <style>
+                  <class name="caption-heading"/>
+                  <class name="anemobit-upload"/>
+                </style>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">anemobit-arrow-up-symbolic</property>
+                    <property name="pixel-size">12</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="stats_upload_title"/>
+                </child>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                  <property name="column-span">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Current</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">5-min Average</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">5-min Peak</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">4</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="current_in">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">1</property><property name="row">2</property></layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="current_out">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">2</property><property name="row">2</property></layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="average_in">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">1</property><property name="row">3</property></layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="average_out">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">2</property><property name="row">3</property></layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="peak_in">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">1</property><property name="row">4</property></layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="peak_out">
+                <property name="xalign">0</property>
+                <style><class name="anemobit-stat-value"/></style>
+                <layout><property name="column">2</property><property name="row">4</property></layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="chart_section">
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkBox">
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Last 5 Minutes</property>
+                <property name="xalign">0</property>
+                <property name="hexpand">True</property>
+                <style>
+                  <class name="heading"/>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">4</property>
+                <property name="valign">center</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="valign">center</property>
+                    <style><class name="anemobit-legend-swatch"/><class name="download"/></style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="legend_download">
+                    <style><class name="caption"/><class name="dim-label"/></style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">4</property>
+                <property name="valign">center</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="valign">center</property>
+                    <style><class name="anemobit-legend-swatch"/><class name="upload"/></style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="legend_upload">
+                    <style><class name="caption"/><class name="dim-label"/></style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AnemobitTrafficChart" id="chart">
+            <property name="height-request">160</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

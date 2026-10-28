@@ -1,0 +1,41 @@
+Source: anemobit
+Section: net
+Priority: optional
+Maintainer: Noctqira <340502527+Noctqira@users.noreply.github.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ meson (>= 1.5),
+ ninja-build,
+ pkgconf,
+ cargo (>= 1.88) | rustup,
+ rustc (>= 1.88) | rustup,
+ libgtk-4-dev (>= 4.22),
+ libadwaita-1-dev (>= 1.9),
+ libglib2.0-dev (>= 2.88),
+ libglib2.0-dev-bin,
+ gettext,
+ desktop-file-utils,
+ appstream,
+ python3,
+Standards-Version: 4.7.2
+Homepage: https://github.com/noctqira/Anemobit
+
+Package: anemobit
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libgtk-4-1 (>= 4.22),
+ libadwaita-1-0 (>= 1.9),
+Recommends:
+ gnome-keyring | kwalletmanager,
+Description: real-time interface traffic of network devices over SNMP
+ Anemobit reads interface counters from a device over SNMP and shows the
+ download and upload rates with gauges and a five-minute chart, in the
+ system tray (with the rate in the top bar on Ubuntu) and in a main window.
+ .
+ It works with devices that provide the standard IF-MIB with 64-bit
+ interface counters over SNMPv2c or SNMPv3 (authentication: MD5, SHA1,
+ SHA224, SHA256, SHA384, SHA512; privacy: DES, AES-128). Passwords are kept
+ in the Secret Service keyring.

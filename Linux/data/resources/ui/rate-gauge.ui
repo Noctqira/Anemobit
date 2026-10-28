@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.22"/>
+  <requires lib="libadwaita" version="1.9"/>
+  <template class="AnemobitRateGauge" parent="GtkWidget">
+    <child>
+      <object class="GtkOverlay">
+        <child>
+          <object class="AnemobitGaugeArc" id="arc"/>
+        </child>
+        <child type="overlay">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">2</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkBox" id="title_box">
+                <property name="spacing">4</property>
+                <property name="halign">center</property>
+                <style>
+                  <class name="caption-heading"/>
+                </style>
+                <child>
+                  <object class="GtkImage" id="arrow">
+                    <property name="pixel-size">12</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="title_label"/>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="value_label">
+                <property name="label">--</property>
+                <style>
+                  <class name="anemobit-gauge-value"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="unit_label">
+                <property name="label"> </property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="overlay">
+          <object class="GtkLabel" id="max_label">
+            <property name="halign">center</property>
+            <property name="valign">end</property>
+            <style>
+              <class name="caption"/>
+              <class name="dim-label"/>
+            </style>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

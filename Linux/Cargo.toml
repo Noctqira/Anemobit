@@ -1,0 +1,52 @@
+[package]
+name = "anemobit"
+description = "Real-time interface traffic of devices over SNMP."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+adw.workspace = true
+gettext-rs.workspace = true
+gtk.workspace = true
+oo7.workspace = true
+anemobit-core.workspace = true
+
+[lints]
+workspace = true
+
+[workspace]
+members = ["core"]
+
+[workspace.package]
+# The version also appears in meson.build; both must match (checked during meson setup).
+version = "1.0.0"
+edition = "2024"
+license = "Apache-2.0"
+authors = ["Noctqira"]
+publish = false
+
+[workspace.dependencies]
+anemobit-core = { path = "core" }
+# Features go up to the versions in Ubuntu 26.04 (GNOME 50); never enable newer ones.
+adw = { package = "libadwaita", version = "0.9", features = ["v1_9"] }
+gtk = { package = "gtk4", version = "0.11", features = ["v4_22"] }
+# Secret Service: use async-io instead of the default tokio (the feature is named async-std).
+oo7 = { version = "0.6", default-features = false, features = ["async-std", "native_crypto"] }
+gettext-rs = { version = "0.8", features = ["gettext-system"] }
+gio = { version = "0.22", features = ["v2_88"] }
+glib = { version = "0.22", features = ["v2_88"] }
+# Hashing, HMAC and encryption for SNMPv3 USM (RustCrypto)
+aes = "0.9"
+cfb-mode = "0.9"
+des = "0.9"
+hmac = "0.13"
+md-5 = "0.11"
+sha1 = "0.11"
+sha2 = "0.11"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+warnings = "deny"

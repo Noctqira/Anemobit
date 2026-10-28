@@ -1,0 +1,585 @@
+# Chinese (traditional) translation for Anemobit.
+# Copyright © 2026 Noctqira
+# This file is distributed under the same license as the anemobit package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: anemobit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-23 13:42+0800\n"
+"PO-Revision-Date: 2026-10-12 00:00+0800\n"
+"Last-Translator: Noctqira\n"
+"Language-Team: Noctqira\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:2
+msgid "Anemobit"
+msgstr ""
+
+#: data/io.github.noctqira.Anemobit.desktop.in.in:3
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:7
+msgid "Real-time interface traffic of devices over SNMP"
+msgstr "透過 SNMP 即時監控設備的介面流量"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon!
+#: data/io.github.noctqira.Anemobit.desktop.in.in:10
+msgid "SNMP;traffic;bandwidth;network;"
+msgstr "SNMP;traffic;bandwidth;network;流量;頻寬;網路;"
+
+#: data/io.github.noctqira.Anemobit.metainfo.xml.in.in:9 src/about.rs:15
+msgid ""
+"Works with devices that provide the standard IF-MIB with 64-bit interface "
+"counters over SNMPv2c or SNMPv3 (authentication: MD5, SHA1, SHA224, SHA256, "
+"SHA384, SHA512; privacy: DES, AES-128)."
+msgstr ""
+"適用於透過 SNMPv2c 或 SNMPv3（認證：MD5、SHA1、SHA224、SHA256、SHA384、"
+"SHA512；加密：DES、AES-128）提供標準 IF-MIB 與 64 位元介面計數器的設備。"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:43
+msgid "Whether the hint about a missing system tray was shown"
+msgstr "是否已顯示過找不到系統匣的提示"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:50
+msgid "Device address (IPv4, IPv6 or host name)"
+msgstr "設備位址（IPv4、IPv6 或主機名稱）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:57
+msgid "Monitored interfaces (ifName), in display order"
+msgstr "監控的介面（ifName），依顯示順序"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:77
+msgid "Refresh interval in seconds (1, 5 or 10)"
+msgstr "更新速率，以秒為單位（1、5 或 10）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:84
+msgid "Interface shown in the system tray and the compact window"
+msgstr "系統匣與精簡小視窗顯示的介面"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:91
+msgid ""
+"Show charts on interface cards when two or more interfaces are monitored"
+msgstr "監控兩個以上介面時，在介面卡片上顯示圖表"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:95
+msgid "Download color as #RRGGBB; empty for the theme default"
+msgstr "下載的顏色（#RRGGBB）；空白表示使用主題預設色"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:99
+msgid "Upload color as #RRGGBB; empty for the theme default"
+msgstr "上傳的顏色（#RRGGBB）；空白表示使用主題預設色"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:104
+msgid "Background opacity of the main window (0–1)"
+msgstr "主視窗背景的不透明度（0–1）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:109
+msgid "Background opacity of the window opened from the system tray (0–1)"
+msgstr "系統匣小視窗背景的不透明度（0–1）"
+
+#: data/io.github.noctqira.Anemobit.gschema.xml.in:113
+msgid ""
+"Display language (en, zh_TW, ja or ko); empty to follow the system. Takes "
+"effect after a restart"
+msgstr "顯示語言（en、zh_TW、ja 或 ko）；空白表示跟隨系統。重新啟動後生效"
+
+#: data/resources/ui/interface-card.ui:112
+msgid "Current"
+msgstr "目前"
+
+#: data/resources/ui/interface-card.ui:125
+msgid "5-min Average"
+msgstr "5 分鐘平均"
+
+#: data/resources/ui/interface-card.ui:138
+msgid "5-min Peak"
+msgstr "5 分鐘峰值"
+
+#: data/resources/ui/interface-card.ui:204
+msgid "Last 5 Minutes"
+msgstr "最近 5 分鐘"
+
+#: data/resources/ui/popup.ui:26 data/resources/ui/window.ui:76
+msgid "Device Not Configured"
+msgstr "尚未設定設備"
+
+#: data/resources/ui/popup.ui:35 data/resources/ui/window.ui:87
+msgid ""
+"Enter the device address and SNMP account, then choose the interface to "
+"monitor."
+msgstr "請輸入設備位址與 SNMP 帳號，並選擇要監控的介面。"
+
+#: data/resources/ui/popup.ui:45 data/resources/ui/window.ui:98
+msgid "Open Settings"
+msgstr "開啟設定"
+
+#: data/resources/ui/popup.ui:233 src/tray.rs:49
+msgid "Open Main Window"
+msgstr "開啟主視窗"
+
+#: data/resources/ui/popup.ui:243 src/tray.rs:54
+msgid "Settings…"
+msgstr "設定…"
+
+#: data/resources/ui/popup.ui:254 src/tray.rs:74
+msgid "Quit"
+msgstr "結束"
+
+#: data/resources/ui/settings-dialog.ui:6 data/resources/ui/window.ui:32
+msgid "Settings"
+msgstr "設定"
+
+#: data/resources/ui/settings-dialog.ui:19
+msgid "Device"
+msgstr "設備"
+
+#: data/resources/ui/settings-dialog.ui:22
+msgid "Address"
+msgstr "位址"
+
+#: data/resources/ui/settings-dialog.ui:28
+msgid "Port"
+msgstr "Port"
+
+#: data/resources/ui/settings-dialog.ui:37
+msgid "SNMP Security"
+msgstr "SNMP 安全性"
+
+#: data/resources/ui/settings-dialog.ui:40
+msgid "Security"
+msgstr "安全模式"
+
+#: data/resources/ui/settings-dialog.ui:71
+msgid "Community"
+msgstr "Community"
+
+#: data/resources/ui/settings-dialog.ui:76
+msgid "User Name (Community)"
+msgstr "使用者名稱（Community）"
+
+#: data/resources/ui/settings-dialog.ui:81
+msgid "Authentication"
+msgstr "認證協定"
+
+#: data/resources/ui/settings-dialog.ui:86
+msgid "Authentication Password"
+msgstr "認證密碼"
+
+#: data/resources/ui/settings-dialog.ui:91
+msgid "Privacy"
+msgstr "加密協定"
+
+#: data/resources/ui/settings-dialog.ui:116
+msgid "Privacy Password"
+msgstr "加密密碼"
+
+#: data/resources/ui/settings-dialog.ui:135
+msgid "Interfaces"
+msgstr "介面"
+
+#: data/resources/ui/settings-dialog.ui:136
+msgid ""
+"Select one or more interfaces to monitor. Each gets its own card on the "
+"dashboard."
+msgstr "勾選一個或多個要監控的介面，每個介面在儀表板上各有一張卡片。"
+
+#: data/resources/ui/settings-dialog.ui:139
+msgid "Scan to list the device's interfaces."
+msgstr "按「掃描介面」列出設備的介面。"
+
+#: data/resources/ui/settings-dialog.ui:147
+msgid "System Tray Interface"
+msgstr "系統匣顯示的介面"
+
+#: data/resources/ui/settings-dialog.ui:152
+msgid "Scan Interfaces"
+msgstr "掃描介面"
+
+#: data/resources/ui/settings-dialog.ui:158
+msgid "Test Connection"
+msgstr "測試連線"
+
+#: data/resources/ui/settings-dialog.ui:167
+msgid "Display"
+msgstr "顯示"
+
+#: data/resources/ui/settings-dialog.ui:168
+msgid ""
+"When off, interface cards show only gauges and statistics while two or more "
+"interfaces are monitored."
+msgstr "關閉時，監控兩個以上介面的卡片只顯示儀表與統計。"
+
+#: data/resources/ui/settings-dialog.ui:171
+msgid "Refresh Rate"
+msgstr "更新速率"
+
+#: data/resources/ui/settings-dialog.ui:199
+msgid "Rate Unit"
+msgstr "速率單位"
+
+#: data/resources/ui/settings-dialog.ui:209
+msgid "Bits (Mbps)"
+msgstr "位元（Mbps）"
+
+#: data/resources/ui/settings-dialog.ui:215
+msgid "Bytes (MB/s)"
+msgstr "位元組（MB/s）"
+
+#: data/resources/ui/settings-dialog.ui:224
+msgid "Show Charts for Multiple Interfaces"
+msgstr "多個介面時顯示圖表"
+
+#: data/resources/ui/settings-dialog.ui:229
+msgid "Main Window Background Opacity"
+msgstr "主視窗背景不透明度"
+
+#: data/resources/ui/settings-dialog.ui:251
+msgid "Tray Window Background Opacity"
+msgstr "系統匣小視窗背景不透明度"
+
+#: data/resources/ui/settings-dialog.ui:273 src/tray.rs:62
+msgid "Show Compact Window"
+msgstr "顯示精簡小視窗"
+
+#: data/resources/ui/settings-dialog.ui:274
+msgid "A small window with the rates, for desktops without a system tray."
+msgstr "只顯示速率的小視窗，適合沒有系統匣的桌面。"
+
+#: data/resources/ui/settings-dialog.ui:282
+msgid "Language"
+msgstr "語言"
+
+#: data/resources/ui/settings-dialog.ui:283
+msgid "Takes effect after Anemobit restarts."
+msgstr "重新啟動 Anemobit 後生效。"
+
+#: data/resources/ui/settings-dialog.ui:286
+msgid "Display Language"
+msgstr "顯示語言"
+
+#: data/resources/ui/settings-dialog.ui:291
+msgid "Restart Now"
+msgstr "立即重新啟動"
+
+#: data/resources/ui/settings-dialog.ui:312
+msgid "Colors"
+msgstr "顏色"
+
+#: data/resources/ui/settings-dialog.ui:317
+#: data/resources/ui/settings-dialog.ui:340
+msgid "Reset"
+msgstr "恢復預設"
+
+#: data/resources/ui/settings-dialog.ui:364
+msgid "Startup"
+msgstr "啟動"
+
+#: data/resources/ui/settings-dialog.ui:365
+msgid "Takes effect immediately."
+msgstr "立即生效。"
+
+#: data/resources/ui/settings-dialog.ui:368
+msgid "Open at Login"
+msgstr "登入時開啟"
+
+#: data/resources/ui/settings-dialog.ui:411
+msgid "Save"
+msgstr "儲存"
+
+#: data/resources/ui/window.ui:26
+msgid "Main Menu"
+msgstr "主選單"
+
+#: data/resources/ui/window.ui:154
+msgid "_About Anemobit"
+msgstr "關於 Anemobit(_A)"
+
+#: data/resources/ui/window.ui:158
+msgid "_Quit"
+msgstr "結束(_Q)"
+
+#: src/about.rs:13
+msgid "Real-time interface traffic of devices over SNMP."
+msgstr "透過 SNMP 即時監控設備的介面流量。"
+
+#: src/about.rs:28
+msgid "Privacy Policy"
+msgstr "隱私權政策"
+
+#: src/application.rs:397
+msgid "System Tray Not Available"
+msgstr "找不到系統匣"
+
+#: src/application.rs:399
+msgid ""
+"To show the rate in the top bar, install and enable the AppIndicator "
+"extension. You can also turn on the compact window in Settings."
+msgstr ""
+"要在頂列顯示速率，請安裝並啟用 AppIndicator 擴充套件。也可以在設定中開啟精簡"
+"小視窗。"
+
+#: src/application.rs:402
+msgid "OK"
+msgstr "確定"
+
+#: src/compact_window.rs:44 src/traffic_model.rs:182
+msgid "Anemobit: Not Set"
+msgstr "Anemobit：未設定"
+
+#: src/popup.rs:194 src/window.rs:211
+msgid "Device up {}"
+msgstr "設備已開機 {}"
+
+#: src/settings_dialog.rs:219
+msgid "Follow System"
+msgstr "跟隨系統"
+
+#: src/settings_dialog.rs:645
+msgid "Changes take effect when you save."
+msgstr "設定會在儲存後生效。"
+
+#: src/settings_dialog.rs:698
+msgid "Scanning interfaces…"
+msgstr "掃描介面中…"
+
+#: src/settings_dialog.rs:709
+msgid "No interfaces found"
+msgstr "沒有找到任何介面"
+
+#. Translators: {} is the number of interfaces.
+#: src/settings_dialog.rs:712
+msgid "Interfaces found: {}"
+msgstr "找到 {} 個介面"
+
+#: src/settings_dialog.rs:725
+msgid "Testing connection…"
+msgstr "測試連線中…"
+
+#: src/settings_dialog.rs:727
+msgid "Connected."
+msgstr "連線成功。"
+
+#. Translators: {} is an uptime such as "12 days, 5 hours".
+#: src/settings_dialog.rs:731
+msgid "Device up {}."
+msgstr "設備已開機 {}。"
+
+#: src/settings_dialog.rs:766
+msgid "Saved"
+msgstr "已儲存"
+
+#: src/settings_dialog.rs:770
+msgid "Could not save the community or passwords to the keyring"
+msgstr "community 或密碼無法寫入鑰匙圈"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:801
+msgid "Could not save the language setting: {}"
+msgstr "無法儲存語言設定：{}"
+
+#: src/settings_dialog.rs:825
+msgid "Could not restart Anemobit: {}"
+msgstr "無法重新啟動 Anemobit：{}"
+
+#. Translators: {} is a system error message.
+#: src/settings_dialog.rs:844
+msgid "Could not change the startup setting: {}"
+msgstr "無法變更啟動設定：{}"
+
+#. Translators: {0} is an interface name, {1} its index.
+#: src/text.rs:33
+msgid "{0} is ifIndex {1}."
+msgstr "{0} 的 ifIndex 為 {1}。"
+
+#: src/text.rs:43
+msgid "{} day"
+msgid_plural "{} days"
+msgstr[0] "{}天"
+
+#: src/text.rs:44
+msgid "{} hour"
+msgid_plural "{} hours"
+msgstr[0] "{}小時"
+
+#: src/text.rs:45
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{}分鐘"
+
+#. Translators: two uptime units, as in "12 days, 5 hours". Chinese and Japanese use no separator ("{0}{1}").
+#: src/text.rs:52
+msgid "{0}, {1}"
+msgstr "{0}{1}"
+
+#: src/text.rs:60
+msgid "Malformed packet ({})"
+msgstr "封包格式錯誤（{}）"
+
+#: src/text.rs:62
+msgid "Unsupported SNMP version {}"
+msgstr "不支援的 SNMP 版本 {}"
+
+#: src/text.rs:66
+msgid "Unexpected PDU type 0x{}"
+msgstr "非預期的 PDU 類型 0x{}"
+
+#: src/text.rs:74
+msgid "SNMP error {0} (varbind {1})"
+msgstr "SNMP 錯誤 {0}（varbind {1}）"
+
+#: src/text.rs:78
+msgid "Connection timed out"
+msgstr "連線逾時"
+
+#: src/text.rs:80
+msgid "Unexpected response: {}"
+msgstr "非預期的回應：{}"
+
+#: src/text.rs:82
+msgid "Interface {} not found"
+msgstr "找不到介面 {}"
+
+#: src/text.rs:83
+msgid "Connection error: {}"
+msgstr "連線錯誤：{}"
+
+#: src/text.rs:91
+msgid "Unknown user name"
+msgstr "使用者名稱錯誤"
+
+#: src/text.rs:92
+msgid "Wrong authentication password or protocol"
+msgstr "認證密碼或認證協定錯誤"
+
+#: src/text.rs:93
+msgid "Wrong privacy password or protocol"
+msgstr "加密密碼或加密協定錯誤"
+
+#: src/text.rs:95
+msgid "Security level does not match the device configuration"
+msgstr "安全層級與設備設定不符"
+
+#: src/text.rs:97
+msgid "Time synchronization with the device failed"
+msgstr "與設備的時間同步失敗"
+
+#: src/text.rs:98
+msgid "Device engine ID mismatch"
+msgstr "設備 engine ID 不符"
+
+#: src/text.rs:100
+msgid ""
+"The device did not answer the encrypted request. Check the privacy password "
+"and protocol."
+msgstr "設備沒有回應加密請求，請確認加密密碼與加密協定"
+
+#: src/text.rs:102
+msgid "SNMPv3 discovery has not completed"
+msgstr "尚未完成 SNMPv3 探索"
+
+#: src/text.rs:104
+msgid "The authentication password must be at least {} characters"
+msgstr "認證密碼至少需要 {} 個字元"
+
+#: src/text.rs:108
+msgid "The privacy password must be at least {} characters"
+msgstr "加密密碼至少需要 {} 個字元"
+
+#: src/text.rs:111
+msgid "Invalid encryption parameters"
+msgstr "加密參數錯誤"
+
+#: src/text.rs:118
+msgid "Enter a community"
+msgstr "請輸入 community"
+
+#: src/text.rs:119
+msgid "Enter a user name"
+msgstr "請輸入使用者名稱"
+
+#: src/text.rs:127
+msgid "Enter the device address"
+msgstr "請輸入設備位址"
+
+#: src/text.rs:128
+msgid "Enter a valid IPv4 or IPv6 address, or a host name"
+msgstr "請輸入有效的 IPv4、IPv6 位址或網域名稱"
+
+#: src/text.rs:129
+msgid "Port must be 1–65535"
+msgstr "Port 必須是 1–65535"
+
+#: src/text.rs:137
+msgid "SNMPv2c with a community only."
+msgstr "SNMPv2c，只需 community。"
+
+#: src/text.rs:138
+msgid "SNMPv3 with authentication."
+msgstr "SNMPv3 只認證。"
+
+#: src/text.rs:139
+msgid "SNMPv3 with authentication and encryption."
+msgstr "SNMPv3 認證並加密。"
+
+#. Translators: {} is a number of seconds (1, 5 or 10).
+#: src/text.rs:146
+msgid "{} sec"
+msgstr "{} 秒"
+
+#: src/text.rs:153
+msgid "Error · retry in {} s"
+msgstr "錯誤 · {} 秒後重試"
+
+#: src/text.rs:162
+msgid "{} interface"
+msgid_plural "{} interfaces"
+msgstr[0] "{} 個介面"
+
+#: src/tray.rs:60
+msgid "Hide Compact Window"
+msgstr "隱藏精簡小視窗"
+
+#: src/tray.rs:68
+msgid "About Anemobit"
+msgstr "關於 Anemobit"
+
+#: src/widgets/rate_gauge.rs:28
+msgid "Download"
+msgstr "下載"
+
+#: src/widgets/rate_gauge.rs:29
+msgid "Upload"
+msgstr "上傳"
+
+#. Translators: {} is a rate such as "100.0 Mbps".
+#: src/widgets/rate_gauge.rs:227
+msgid "Max {}"
+msgstr "上限 {}"
+
+#: src/widgets/rate_gauge.rs:235
+msgid "No data"
+msgstr "無資料"
+
+#: src/widgets/status_pill.rs:68
+msgid "Connecting…"
+msgstr "連線中…"
+
+#: src/widgets/status_pill.rs:74
+msgid "Not Set"
+msgstr "未設定"
+
+#: src/widgets/traffic_chart.rs:260
+msgid "Waiting for data…"
+msgstr "等待資料…"
+
+#: src/widgets/traffic_chart.rs:375
+msgid "Traffic over the last 5 minutes"
+msgstr "最近 5 分鐘的流量"
+
+#. Translators: {} is a time of day such as "14:05:09".
+#: src/window.rs:217
+msgid "Updated {}"
+msgstr "更新於 {}"
